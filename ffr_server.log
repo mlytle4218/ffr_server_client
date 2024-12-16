@@ -1,0 +1,243 @@
+2024-12-12 16:43 - INFO - starting server
+2024-12-12 16:45 - INFO - starting server
+2024-12-12 16:45 - INFO - start_recording
+2024-12-12 16:45 - INFO - starting recording for test1.mp3
+2024-12-12 16:45 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 16:45 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 16:45 - INFO - start_recording
+2024-12-12 16:45 - INFO - starting recording for test2.mp3
+2024-12-12 16:45 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 16:45 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 16:46 - INFO - start_recording
+2024-12-12 16:46 - INFO - starting recording for test3.mp3
+2024-12-12 16:46 - INFO - get_recordings
+2024-12-12 16:46 - INFO - stop_recording
+2024-12-12 16:46 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 16:46 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:01 - INFO - starting server
+2024-12-12 18:01 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 144, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-12 18:01 - INFO - starting server
+2024-12-12 18:01 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 144, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-12 18:01 - INFO - starting server
+2024-12-12 18:01 - INFO - start_recording
+2024-12-12 18:01 - INFO - starting recording for test1.mp3
+2024-12-12 18:01 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 18:01 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:01 - INFO - start_recording
+2024-12-12 18:01 - INFO - starting recording for test2.mp3
+2024-12-12 18:01 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 18:01 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:01 - INFO - start_recording
+2024-12-12 18:01 - INFO - starting recording for test3.mp3
+2024-12-12 18:01 - INFO - get_recordings
+2024-12-12 18:01 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 18:01 - INFO - stop_recording
+2024-12-12 18:01 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:12 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 144, in main
+    filename=ffr_config.SERVER_LOG_LOC,
+KeyboardInterrupt
+2024-12-12 18:12 - INFO - starting server
+2024-12-12 18:12 - INFO - start_recording
+2024-12-12 18:12 - INFO - starting recording for test1.mp3
+2024-12-12 18:12 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 18:12 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:12 - INFO - start_recording
+2024-12-12 18:12 - INFO - starting recording for test2.mp3
+2024-12-12 18:12 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 18:12 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:12 - INFO - start_recording
+2024-12-12 18:12 - INFO - starting recording for test3.mp3
+2024-12-12 18:12 - INFO - get_recordings
+2024-12-12 18:12 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 18:12 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:12 - INFO - starting server
+2024-12-12 18:13 - INFO - start_recording
+2024-12-12 18:13 - INFO - starting recording for test1.mp3
+2024-12-12 18:13 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 18:13 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:13 - INFO - start_recording
+2024-12-12 18:13 - INFO - starting recording for test2.mp3
+2024-12-12 18:13 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 18:13 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:13 - INFO - start_recording
+2024-12-12 18:13 - INFO - starting recording for test3.mp3
+2024-12-12 18:13 - INFO - get_recordings
+2024-12-12 18:13 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-12 18:13 - INFO - stop_recording
+2024-12-12 18:13 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-12 18:19 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 156, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 05:11 - INFO - starting server
+2024-12-13 05:12 - INFO - start_recording
+2024-12-13 05:12 - INFO - starting recording for rockin.mp3
+2024-12-13 05:12 - DEBUG - Starting new HTTPS connection (1): s4.radio.co:443
+2024-12-13 05:12 - DEBUG - https://s4.radio.co:443 "GET /s0f3a44a66/listen HTTP/1.1" 200 None
+2024-12-13 05:13 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 156, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 05:13 - INFO - starting server
+2024-12-13 05:15 - INFO - start_recording
+2024-12-13 05:15 - INFO - starting recording for rocking.mp3
+2024-12-13 05:15 - DEBUG - Starting new HTTPS connection (1): s4.radio.co:443
+2024-12-13 05:15 - DEBUG - https://s4.radio.co:443 "GET /s0f3a44a66/listen HTTP/1.1" 200 None
+2024-12-13 05:22 - INFO - get_recordings
+2024-12-13 05:23 - INFO - get_recordings
+2024-12-13 05:23 - INFO - get_recordings
+2024-12-13 05:25 - INFO - get_recordings
+2024-12-13 05:25 - INFO - get_recordings
+2024-12-13 05:25 - INFO - stop_recording
+2024-12-13 05:26 - INFO - get_recordings
+2024-12-13 05:28 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 156, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 18:59 - INFO - starting server
+2024-12-13 19:00 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 150, in main
+    stop_recording(data.get("id"))
+KeyboardInterrupt
+2024-12-13 19:00 - INFO - starting server
+2024-12-13 20:12 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 132, in main
+    try:
+KeyboardInterrupt
+2024-12-13 20:14 - INFO - starting server
+2024-12-13 20:15 - INFO - start_recording
+2024-12-13 20:15 - INFO - starting recording for rocker01.mp3
+2024-12-13 20:15 - DEBUG - Starting new HTTPS connection (1): s4.radio.co:443
+2024-12-13 20:15 - DEBUG - https://s4.radio.co:443 "GET /s0f3a44a66/listen HTTP/1.1" 200 None
+2024-12-13 20:15 - INFO - get_recordings
+2024-12-13 20:15 - INFO - stop_recording
+2024-12-13 20:16 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 136, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 20:16 - INFO - starting server
+2024-12-13 20:23 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 136, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 20:23 - INFO - starting server
+2024-12-13 20:23 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 136, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 22:03 - INFO - starting server
+2024-12-13 22:04 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 141, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 22:06 - INFO - starting server
+2024-12-13 22:13 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 22:14 - INFO - starting server
+2024-12-13 22:15 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 22:15 - INFO - starting server
+2024-12-13 22:16 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 22:16 - INFO - starting server
+2024-12-13 22:16 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 22:16 - INFO - starting server
+2024-12-13 22:17 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 14:20 - INFO - starting server
+2024-12-13 14:20 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 14:20 - INFO - starting server
+2024-12-13 14:22 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 14:22 - INFO - starting server
+2024-12-13 14:23 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 14:32 - INFO - starting server
+2024-12-13 14:33 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 14:33 - INFO - starting server
+2024-12-13 14:34 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 14:37 - INFO - starting server
+2024-12-13 14:37 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-13 14:38 - INFO - starting server
+2024-12-15 19:10 - INFO - starting server
+2024-12-15 19:11 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 165, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 19:13 - INFO - starting server
+2024-12-15 19:14 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 165, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 19:15 - INFO - starting server
+2024-12-15 19:15 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 165, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 19:15 - INFO - starting server
+2024-12-15 19:16 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 165, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 19:16 - INFO - starting server
