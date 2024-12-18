@@ -7,6 +7,9 @@ import os
 import tabCompleter
 import readline
 from date import Date
+from subprocess import call
+import utility
+import menus
 
 class StreamData():
     def __init__(self, description, url, extension):
@@ -165,16 +168,28 @@ def stream_record_stop():
     pass
 
 def stream_play():
-    os.system('clear')
-    print("play")
+    stm = choose_stream()
+    # print(stm.url)
+    call(["mpv","--really-quiet","--no-video",str(stm.url)])
     input("Enter to continue")
-    pass
 
 def stream_add():
     os.system('clear')
-    print("add")
+    data = utility.get_list_data()
+    alias=input("Alias for new stream: ")
+    while len(list(filter(lambda als: als[0] == alias, data))) > 0:
+        alias=input("Alias in use - alias for new stream: ")
+    stream = input("URL for stream: ")
+    stream = utility.youtube_dl_check(stream=stream)
+    extension = utility.get_stream_type(stream=stream)
+    if extension==None:
+        input("Problem with that url - Enter to continue")
+    else:
+        new_fields=[alias,stream,extension]
+        utility.add_data(new_fields)
+        input("New stream added - Enter to continue")
+
     input("Enter to continue")
-    pass
 
 def stream_remove():
     os.system('clear')
@@ -218,15 +233,15 @@ if __name__ == "__main__":
 
 
 
-    main_menu_options = [
-        {"text":"re-cord existing stream","func":stream_record_start},
-        {"text":"stop re-cording existing stream","func":stream_record_stop},
-        {"text":"Listen to existing stream","func":stream_play},
-        {"text":"Add new stream","func":stream_add},
-        {"text":"Remove stream","func":stream_remove},
-        {"text":"Edit existing stream","func":stream_edit}
-    ]
-    menu_choice(main_menu_options)
+    # main_menu_options = [
+    #     {"text":"re-cord existing stream","func":stream_record_start},
+    #     {"text":"stop re-cording existing stream","func":stream_record_stop},
+    #     {"text":"Listen to existing stream","func":stream_play},
+    #     {"text":"Add new stream","func":stream_add},
+    #     {"text":"Remove stream","func":stream_remove},
+    #     {"text":"Edit existing stream","func":stream_edit}
+    # ]
+    menu_choice(menus.main_menu_options)
 
 
 
