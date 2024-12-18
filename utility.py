@@ -48,3 +48,8 @@ def add_data(stream_data):
     with open(ffr_config.LINK_LIST, 'a') as f:
         writer = csv.writer(f)
         writer.writerow(stream_data)
+
+def override_list(list_data):
+    with open(ffr_config.LINK_LIST, 'w') as f:
+        writer = csv.writer(f)
+        writer.writerows(list_data)

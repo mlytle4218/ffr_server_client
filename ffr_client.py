@@ -16,13 +16,15 @@ class StreamData():
         self.description = description
         self.url = url
         self.extension = extension
-    def __str__(self):
-        return self.description
+        
+    # def __str__(self):
+    #     return self.description
 
 
 SOCK = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-def choose_stream():    
+def choose_stream():
+    streams = load_saved_stream_data() 
     while True:
         os.system('clear')
         for i,each in enumerate(streams):
@@ -35,13 +37,13 @@ def choose_stream():
             if int(choice_made) > 0:
                 return streams[int(choice_made)-1]
             else:
-                input("invalid choice - Enter to continue")
+                input("1invalid choice - Enter to continue")
         except ValueError as e:
             if choice_made == "q":
                 return None
-            input("invalid choice - Enter to continue")
+            input("2invalid choice - Enter to continue")
         except IndexError as e:
-            input("invalid choice - Enter to continue")
+            input("3invalid choice - Enter to continue")
     
 def start_recording(file_details,url,start_time=None,end_time=None):
     if start_time and end_time:
@@ -128,17 +130,19 @@ def stream_record_start():
 
 def stream_record_start_now():
     stm = choose_stream()
-    file_path = get_file_path(stm.extension)
-    start_recording(file_path, stm.url)
-    input("recoding started - Enter to continue")
+    if stm:
+        file_path = get_file_path(stm.extension)
+        start_recording(file_path, stm.url)
+        input("recoding started - Enter to continue")
 
 def stream_record_start_later():
     s_time = Date().enter_datetime("start")
     e_time = Date().enter_datetime("end")
     stm = choose_stream()
-    file_path = get_file_path(stm.extension)
-    start_recording(file_path, stm.url,start_time=s_time,end_time=e_time)
-    input("recoding started - Enter to continue")
+    if stm:
+        file_path = get_file_path(stm.extension)
+        start_recording(file_path, stm.url,start_time=s_time,end_time=e_time)
+        input("recoding started - Enter to continue")
 
 def stream_record_stop():
     recordings = get_recordings()
@@ -169,9 +173,11 @@ def stream_record_stop():
 
 def stream_play():
     stm = choose_stream()
+    print("play")
     # print(stm.url)
-    call(["mpv","--really-quiet","--no-video",str(stm.url)])
-    input("Enter to continue")
+    if stm:
+        call(["mpv","--really-quiet","--no-video",str(stm.url)])
+        input("Enter to continue")
 
 def stream_add():
     os.system('clear')
@@ -179,29 +185,54 @@ def stream_add():
     alias=input("Alias for new stream: ")
     while len(list(filter(lambda als: als[0] == alias, data))) > 0:
         alias=input("Alias in use - alias for new stream: ")
-    stream = input("URL for stream: ")
-    stream = utility.youtube_dl_check(stream=stream)
-    extension = utility.get_stream_type(stream=stream)
-    if extension==None:
-        input("Problem with that url - Enter to continue")
-    else:
-        new_fields=[alias,stream,extension]
-        utility.add_data(new_fields)
-        input("New stream added - Enter to continue")
+    while True:
+        stream = input("URL for stream: ")
+        stream = utility.youtube_dl_check(stream=stream)
+        extension = utility.get_stream_type(stream=stream)
+        if extension==None:
+            input("Problem with that url - Enter to continue")
+        else:
+            new_fields=[alias,stream,extension]
+            utility.add_data(new_fields)
+            input("New stream added - Enter to continue")
+            break
 
     input("Enter to continue")
 
 def stream_remove():
     os.system('clear')
+    stm = choose_stream()
     print("remove")
-    input("Enter to continue")
-    pass
+    if stm:
+        data = utility.get_list_data()
+        result  = list(filter(lambda stream: stream[0] != stm.description, data))
+        utility.override_list(result)
+        input("Stream removed")
 
 def stream_edit():
     os.system('clear')
+    stm = choose_stream()
     print("edit")
-    input("Enter to continue")
-    pass
+    if stm:
+        print("hi")
+        data = utility.get_list_data()
+        for i in range(len(data)):
+            if data[i][0] == stm.description:
+                print("existing alias: " + data[i][0])
+                alias=input("Alias for new stream: ") or  data[i][0]
+                print("existing URL: " + data[i][1])
+                stream = input("URL for stream: ") or data[i][1]
+                stream = utility.youtube_dl_check(stream=stream)
+                extension = utility.get_stream_type(stream=stream)
+                if extension==None:
+                    input("Problem with that url - Enter to continue")
+                else:
+
+                    data[i][0] = alias
+                    data[i][1] = stream
+                    data[i][2] = extension
+                    utility.override_list(data)
+                    input("Stream updated - Enter to continue")
 
 def menu_choice(options):
     while True:
@@ -227,61 +258,4 @@ def menu_choice(options):
 if __name__ == "__main__":
     logger.info("starting client")
 
-    streams = load_saved_stream_data()
-
-
-
-
-
-    # main_menu_options = [
-    #     {"text":"re-cord existing stream","func":stream_record_start},
-    #     {"text":"stop re-cording existing stream","func":stream_record_stop},
-    #     {"text":"Listen to existing stream","func":stream_play},
-    #     {"text":"Add new stream","func":stream_add},
-    #     {"text":"Remove stream","func":stream_remove},
-    #     {"text":"Edit existing stream","func":stream_edit}
-    # ]
     menu_choice(menus.main_menu_options)
-
-
-
-    # specific_time = time.mktime(time.strptime("2024-12-15 21:16:00", "%Y-%m-%d %H:%M:%S")) 
-    # specific_time2 = time.mktime(time.strptime("2024-12-15 21:16:55", "%Y-%m-%d %H:%M:%S")) 
-    # t = timings.Timings(start_time=specific_time, end_time=specific_time2)
-
-    # start_recording(
-    #     "/home/marc/ffr/test1.mp3", 
-    #     "http://www.godsdjsradio.com:8080/stream",
-    #     specific_time,
-    #     specific_time2
-    #     )
-
-
-
-
-
-
-
-
-
-
-
-    # temp = start_recording("/home/marc/ffr/test1.mp3", "http://www.godsdjsradio.com:8080/stream")
-    # res = json.loads(temp)
-    # time.sleep(10)
-    # temp = start_recording("/home/marc/ffr/test2.mp3", "http://www.godsdjsradio.com:8080/stream")
-    # time.sleep(10)
-    # temp = start_recording("/home/marc/ffr/test3.mp3", "http://www.godsdjsradio.com:8080/stream")
-
-
-    # print(get_recordings())
-
-
-    # stop_recording(res["id"])
-
-
-    # with open(ffr_config.LINK_LIST, 'rt') as csvfile:
-    #     result = []
-    #     data = sorted(list(csv.reader(csvfile)))
-    #     for datum in data:
-    #         print("{}:{}".format(len(datum), datum))

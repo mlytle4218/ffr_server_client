@@ -4,7 +4,6 @@ ABC-News-Radio-Australia,https://mediaserviceslive.akamaized.net/hls/live/203831
 ABC-news-australia,https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index_45.m3u8,mp4
 ABC-news-radio,https://abcnews-streams.akamaized.net/hls/live/2024904/radiolive/master-96000.m3u8,mp4
 CPAC-freetube,https://cpac-live.cdn.vustreams.com/groupa/live/f9809cea-1e07-47cd-a94d-2ddd3e1351db/live.isml/live-audio_track_0_0_eng=96000.m3u8,mp4
-wsgn,https://ice41.securenetsystems.net/WSGN?playSessionID=E0055B8F-947F-4DB8-9E87ED39C104E29E,mp4
 aircheck online,https://sonic.radiostream.ca:8018/,mp3
 al-jazeera-english,http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445127,mp4
 al-jazeera-radio,https://live-hls-audio-web-aje.getaj.net/VOICE-AJE/01.m3u8,aac
@@ -69,3 +68,4 @@ wcsp,https://playerservices.streamtheworld.com/api/livestream-redirect/CSPANRADI
 weather-nation,https://weathernationtv.roku.wurl.com/manifest/0f47815bd66ffb3b8cb4ca6c9560f535.m3u8,mp4
 whyy,https://whyy.streamguys1.com/whyy-mp3,mp3
 wion-news,http://hatsubservices.ottc.pro:80/GNRVUQPGFJ/N77HKXQEQE/2892,mp4
+wsgn,https://ice41.securenetsystems.net/WSGN?playSessionID=E0055B8F-947F-4DB8-9E87ED39C104E29E,mp4
