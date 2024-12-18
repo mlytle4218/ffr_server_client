@@ -11,18 +11,24 @@ import recording
 import logging
 import sched
 import datetime
+import timings
 
 def start_recording(url, file_details, start_time=None, end_time=None):
     try:
         id = uuid.uuid4()
         a=Value('b',True)
         file_handle = open(file_details, 'wb')
+        # print(url)
+
         if url.endswith(".m3u") or url.endswith(".m3u8"):
-            p = Process(target=record_stream_data, args=(url,file_handle,a,))
+            p = Process(
+                target=concatenate_m3u8_segments,
+                args=(url,file_handle,a,start_time, end_time)
+                )
         else:
             p = Process(
-                target=concatenate_m3u8_segments, 
-                args=(url,file_handle,a,)
+                target=record_stream_data, 
+                args=(url,file_handle,a,start_time, end_time)
                 )
         p.start()
         rec = recording.Recording(
@@ -31,68 +37,49 @@ def start_recording(url, file_details, start_time=None, end_time=None):
                 file_handler=file_handle, 
                 flag=a, 
                 file_details=file_details,
-                start_time=time.time())
+                start_time=start_time,
+                end_time=end_time
+                )
+
         recordings.append(rec)
     except Exception:
         logging.exception("start_recording Error")
         return -1
 
-# def start_recording_other(url, file_details):
-#     try:
-
-#         id = uuid.uuid4()
-#         a=Value('b',True)
-#         file_handle = open(file_details, 'wb')
-#         p = Process(target=record_stream_data, args=(url,file_handle,a,))
-#         p.start()
-#         rec = recording.Recording(
-#                 id,
-#                 process=p,
-#                 file_handler=file_handle, 
-#                 flag=a, 
-#                 file_details=file_details,
-#                 start_time=time.time())
-#         recordings.append(rec)
-#         return id
-#     except Exception:
-#         logging.exception("start_recording_other Error")
-#         return -1
-
-def record_stream_data(url,fhandler, a):
+def record_stream_data(url,fhandler, a, start_time, end_time):
+    if end_time and time.time() > end_time:
+        return None
+    if start_time and end_time:
+        while True:
+            if start_time < time.time() < end_time:
+                break 
     try:
         chunk_size = 1024
 
         with requests.Session() as session:
             response = session.get(url, stream=True)
             for chunk in response.iter_content(chunk_size=chunk_size):
-                if a.value:
-                    if chunk:
-                        fhandler.write(chunk)
+                if end_time:
+                    if a.value and time.time() < end_time:
+                        if chunk:
+                            fhandler.write(chunk)
+                    else:
+                        break
                 else:
-                    break
+                    if a.value:
+                        if chunk:
+                            fhandler.write(chunk)
+                    else:
+                        break
     except Exception:
         logging.exception("record_stream_data")
 
-# def start_recording_m3u8(url, file_details):
-#     try:
-#         id = uuid.uuid4
-#         a=Value('b', True)
-#         file_handle = open(file_details, 'wb')
-#         p = Process(target=concatenate_m3u8_segments, args=(url,file_handle,a,))
-#         p.start()
-#         recordings.append(
-#             recording.Recording(
-#                 id,
-#                 file_handler=file_handle, 
-#                 flag=a, 
-#                 file_details=file_details,
-#                 start_time=time.time())
-#             )
-#         return id
-#     except Exception:
-#         return False
-
-def concatenate_m3u8_segments(url, fhandler, a):
+def concatenate_m3u8_segments(url, fhandler, a, start_time, end_time):
+    if time.time() > end_time:
+        return None
+    while True:
+        if start_time < time.time() < end_time:
+            break 
     try:
         stop_flag  = a.value
         path_parts = url.split('/')
@@ -100,29 +87,55 @@ def concatenate_m3u8_segments(url, fhandler, a):
         path_parts.pop()
         chunk_size = 1024
         segments_found = []
-        while stop_flag:
-            # print("Running in the background...{}".format(a.value))
-            time.sleep(1)
-            playlist = m3u8.load(url)
-            for seg in playlist.segments:
-                flag = False
+        if end_time:
+            while stop_flag and time.time() < end_time:
+                # print("Running in the background...{}".format(a.value))
+                time.sleep(1)
+                playlist = m3u8.load(url)
+                for seg in playlist.segments:
+                    flag = False
 
-                for val in segments_found:
-                    if val == seg.uri:
-                        flag = True
-                        break
+                    for val in segments_found:
+                        if val == seg.uri:
+                            flag = True
+                            break
 
-                if flag:
-                    pass
-                else:
-                    segments_found.append(seg.uri)
-                    pp = path_parts.copy()
-                    pp.append(seg.uri)
-                    new_path = '/'.join(pp)
-                    data = requests.get(new_path)
-                    for chunk in data.iter_content(chunk_size=chunk_size):
-                        fhandler.write(chunk)
-            stop_flag = a.value
+                    if flag:
+                        pass
+                    else:
+                        segments_found.append(seg.uri)
+                        pp = path_parts.copy()
+                        pp.append(seg.uri)
+                        new_path = '/'.join(pp)
+                        data = requests.get(new_path)
+                        for chunk in data.iter_content(chunk_size=chunk_size):
+                            fhandler.write(chunk)
+                stop_flag = a.value
+            else:
+                while stop_flag:
+                    # print("Running in the background...{}".format(a.value))
+                    time.sleep(1)
+                    playlist = m3u8.load(url)
+                    for seg in playlist.segments:
+                        flag = False
+
+                        for val in segments_found:
+                            if val == seg.uri:
+                                flag = True
+                                break
+
+                        if flag:
+                            pass
+                        else:
+                            segments_found.append(seg.uri)
+                            pp = path_parts.copy()
+                            pp.append(seg.uri)
+                            new_path = '/'.join(pp)
+                            data = requests.get(new_path)
+                            for chunk in data.iter_content(chunk_size=chunk_size):
+                                fhandler.write(chunk)
+                    stop_flag = a.value
+
     except Exception:
         logging.exception("concatenate_m3u8_segments")
 
@@ -169,9 +182,25 @@ def main():
             if data.get('action') == "start_recording":
                 url = data.get("url")
                 file_details = data.get("file_details")
-                logging.info("starting recording for {}".format(file_details.split('/')[-1]))
+                try:
+                    start_time = data.get("start_time")
+                except Exception:
+                    start_time = time.time.now()
+                try:
+                    end_time = data.get("end_time")
+                except Exception:
+                    end_time = None
+                
+                logging.info("starting recording for {}".format(
+                    file_details.split('/')[-1])
+                    )
 
-                rec_uuid = start_recording(url=url,file_details=file_details)
+                rec_uuid = start_recording(
+                    url=url,
+                    file_details=file_details,
+                    start_time=start_time,
+                    end_time=end_time
+                    )
                 r_data = json.dumps({"id":str(rec_uuid)})
                 SOCK.sendto(r_data.encode(), addr)
 
@@ -188,17 +217,17 @@ if __name__ == '__main__':
     SOCK = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     SOCK.bind((ffr_config.IP, ffr_config.PORT))
 
-    scheduler = sched.scheduler(time.time, time.sleep)
+    # scheduler = sched.scheduler(time.time, time.sleep)
 
-    specific_time = time.mktime(time.strptime("2024-12-15 19:16:10", "%Y-%m-%d %H:%M:%S")) 
-    specific_time2 = time.mktime(time.strptime("2024-12-15 19:16:15", "%Y-%m-%d %H:%M:%S")) 
-    new_time = datetime.datetime(year=2024,month=12,day=13,hour=14,minute=34)
-    scheduler.enterabs(specific_time, 1, print_something)
-    scheduler.enterabs(specific_time2, 1, print_something)
-    scheduler.run()
+    # specific_time = time.mktime(time.strptime("2024-12-15 19:16:10", "%Y-%m-%d %H:%M:%S")) 
+    # specific_time2 = time.mktime(time.strptime("2024-12-15 19:16:15", "%Y-%m-%d %H:%M:%S")) 
+    # new_time = datetime.datetime(year=2024,month=12,day=13,hour=14,minute=34)
+    # scheduler.enterabs(specific_time, 1, print_something)
+    # scheduler.enterabs(specific_time2, 1, print_something)
+    # scheduler.run()
 
-    print((specific_time))
-    print((new_time))
+    # print((specific_time))
+    # print((new_time))
     # print(time.strftime(new_time.timestamp(), "%Y-%m-%d %H:%M:%S"))
 
 

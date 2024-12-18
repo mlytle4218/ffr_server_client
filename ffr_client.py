@@ -1,14 +1,12 @@
 import socket
 import ffr_config
 import json
-import time
 import csv
-import utility
 from base_logger import logger
 import os
-import sys
 import tabCompleter
 import readline
+from date import Date
 
 class StreamData():
     def __init__(self, description, url, extension):
@@ -20,11 +18,57 @@ class StreamData():
 
 
 SOCK = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+
+def choose_stream():    
+    while True:
+        os.system('clear')
+        for i,each in enumerate(streams):
+            print("number {} {}".format(i+1, each.description))
+        print("Letter q Quit")
+        choice_made=input("Choice: ")
+        
+        try:
+            int(choice_made)
+            if int(choice_made) > 0:
+                return streams[int(choice_made)-1]
+            else:
+                input("invalid choice - Enter to continue")
+        except ValueError as e:
+            if choice_made == "q":
+                return None
+            input("invalid choice - Enter to continue")
+        except IndexError as e:
+            input("invalid choice - Enter to continue")
     
-def start_recording(file_details,url):
-    data = json.dumps(
-        {"action":"start_recording","file_details": file_details, "url": url}
-        )
+def start_recording(file_details,url,start_time=None,end_time=None):
+    if start_time and end_time:
+        data = json.dumps(
+                {
+                    "action":"start_recording",
+                    "file_details": file_details, 
+                    "url": url,
+                    "start_time":start_time,
+                    "end_time": end_time
+                }
+            )
+    elif start_time:
+        data = json.dumps(
+                {
+                    "action":"start_recording",
+                    "file_details": file_details, 
+                    "url": url,
+                    "start_time":start_time
+                }
+            )
+
+    else:
+        data = json.dumps(
+                {
+                    "action":"start_recording",
+                    "file_details": file_details, 
+                    "url": url,
+                }
+            )
     SOCK.sendto(
         data.encode(),
         (ffr_config.IP, ffr_config.PORT)
@@ -80,38 +124,18 @@ def stream_record_start():
     menu_choice(record_menu_options)
 
 def stream_record_start_now():
-    while True:
-        os.system('clear')
-        for i,each in enumerate(streams):
-            print("number {} {}".format(i+1, each.description))
-        print("Letter q Quit")
-        choice_made=input("Choice: ")
-        
-        try:
-            int(choice_made)
-            if int(choice_made) > 0:
-                break
-            else:
-                input("invalid choice - Enter to continue")
-        except ValueError as e:
-            if choice_made == "q":
-                break
-            input("invalid choice - Enter to continue")
-        except IndexError as e:
-            input("invalid choice - Enter to continue")
-
-    # print(streams[int(choice_made)-1])
-    # input("Enter to continue")
-    stm = streams[int(choice_made)-1]
+    stm = choose_stream()
     file_path = get_file_path(stm.extension)
     start_recording(file_path, stm.url)
     input("recoding started - Enter to continue")
 
 def stream_record_start_later():
-    os.system('clear')
-    print("record_start_later")
-    input("Enter to continue")
-    pass
+    s_time = Date().enter_datetime("start")
+    e_time = Date().enter_datetime("end")
+    stm = choose_stream()
+    file_path = get_file_path(stm.extension)
+    start_recording(file_path, stm.url,start_time=s_time,end_time=e_time)
+    input("recoding started - Enter to continue")
 
 def stream_record_stop():
     recordings = get_recordings()
@@ -145,16 +169,19 @@ def stream_play():
     print("play")
     input("Enter to continue")
     pass
+
 def stream_add():
     os.system('clear')
     print("add")
     input("Enter to continue")
     pass
+
 def stream_remove():
     os.system('clear')
     print("remove")
     input("Enter to continue")
     pass
+
 def stream_edit():
     os.system('clear')
     print("edit")
@@ -200,6 +227,28 @@ if __name__ == "__main__":
         {"text":"Edit existing stream","func":stream_edit}
     ]
     menu_choice(main_menu_options)
+
+
+
+    # specific_time = time.mktime(time.strptime("2024-12-15 21:16:00", "%Y-%m-%d %H:%M:%S")) 
+    # specific_time2 = time.mktime(time.strptime("2024-12-15 21:16:55", "%Y-%m-%d %H:%M:%S")) 
+    # t = timings.Timings(start_time=specific_time, end_time=specific_time2)
+
+    # start_recording(
+    #     "/home/marc/ffr/test1.mp3", 
+    #     "http://www.godsdjsradio.com:8080/stream",
+    #     specific_time,
+    #     specific_time2
+    #     )
+
+
+
+
+
+
+
+
+
 
 
     # temp = start_recording("/home/marc/ffr/test1.mp3", "http://www.godsdjsradio.com:8080/stream")

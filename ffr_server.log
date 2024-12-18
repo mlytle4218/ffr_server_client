@@ -241,3 +241,231 @@ Traceback (most recent call last):
     data, addr = SOCK.recvfrom(1024)
 KeyboardInterrupt
 2024-12-15 19:16 - INFO - starting server
+2024-12-15 19:30 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 165, in main
+KeyboardInterrupt
+2024-12-15 19:39 - INFO - starting server
+2024-12-15 20:30 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 137, in main
+    logging.info(data.get("action"))
+KeyboardInterrupt
+2024-12-15 20:30 - INFO - starting server
+2024-12-15 20:30 - INFO - start_recording
+2024-12-15 20:30 - INFO - starting recording for test1.mp3
+2024-12-15 20:32 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 135, in main
+KeyboardInterrupt
+2024-12-15 20:32 - INFO - starting server
+2024-12-15 20:32 - INFO - start_recording
+2024-12-15 20:32 - INFO - starting recording for test1.mp3
+2024-12-15 20:33 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 139, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 20:34 - INFO - starting server
+2024-12-15 20:34 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 139, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 20:35 - INFO - starting server
+2024-12-15 20:36 - INFO - start_recording
+2024-12-15 20:36 - INFO - starting recording for test1.mp3
+2024-12-15 20:36 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 139, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 20:36 - INFO - starting server
+2024-12-15 20:36 - INFO - start_recording
+2024-12-15 20:36 - INFO - starting recording for test1.mp3
+2024-12-15 20:37 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 139, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 20:38 - INFO - starting server
+2024-12-15 20:39 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    logging.info(data.get("action"))
+KeyboardInterrupt
+2024-12-15 20:39 - INFO - starting server
+2024-12-15 20:39 - INFO - start_recording
+2024-12-15 20:39 - INFO - starting recording for test1.mp3
+2024-12-15 20:41 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 140, in main
+    while True:
+KeyboardInterrupt
+2024-12-15 20:41 - INFO - starting server
+2024-12-15 20:41 - INFO - start_recording
+2024-12-15 20:41 - INFO - starting recording for test1.mp3
+2024-12-15 20:41 - INFO - start_recording
+2024-12-15 20:41 - INFO - starting recording for test1.mp3
+2024-12-15 20:41 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 20:41 - INFO - starting server
+2024-12-15 20:41 - INFO - start_recording
+2024-12-15 20:41 - INFO - starting recording for test1.mp3
+2024-12-15 20:42 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 20:42 - INFO - starting server
+2024-12-15 20:42 - INFO - start_recording
+2024-12-15 20:42 - INFO - starting recording for test1.mp3
+2024-12-15 20:42 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 20:43 - INFO - starting server
+2024-12-15 20:43 - INFO - start_recording
+2024-12-15 20:43 - INFO - starting recording for test1.mp3
+2024-12-15 20:54 - INFO - start_recording
+2024-12-15 20:54 - INFO - starting recording for test1.mp3
+2024-12-15 20:55 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 20:55 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 20:55 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 142, in main
+KeyboardInterrupt
+2024-12-15 20:55 - INFO - starting server
+2024-12-15 20:56 - INFO - start_recording
+2024-12-15 20:56 - INFO - starting recording for test1.mp3
+2024-12-15 20:57 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 20:57 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 20:57 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 145, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 20:58 - INFO - starting server
+2024-12-15 20:58 - INFO - start_recording
+2024-12-15 20:58 - INFO - starting recording for test1.mp3
+2024-12-15 20:59 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 20:59 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 21:01 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 146, in main
+    try:
+KeyboardInterrupt
+2024-12-15 21:02 - INFO - starting server
+2024-12-15 21:02 - INFO - start_recording
+2024-12-15 21:02 - INFO - starting recording for test1.mp3
+2024-12-15 21:03 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 21:03 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 21:05 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 147, in main
+KeyboardInterrupt
+2024-12-15 21:05 - INFO - starting server
+2024-12-15 21:07 - INFO - start_recording
+2024-12-15 21:07 - INFO - starting recording for gods.mp3
+2024-12-15 21:08 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 144, in main
+    try:
+KeyboardInterrupt
+2024-12-15 21:08 - INFO - starting server
+2024-12-15 21:09 - INFO - start_recording
+2024-12-15 21:09 - INFO - starting recording for gods.mp3
+2024-12-15 21:09 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 21:09 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 21:09 - ERROR - record_stream_data
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 62, in record_stream_data
+    if a.value and time.time() < end_time:
+TypeError: '<' not supported between instances of 'float' and 'NoneType'
+2024-12-15 21:10 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 145, in main
+KeyboardInterrupt
+2024-12-15 21:11 - INFO - starting server
+2024-12-15 21:11 - INFO - start_recording
+2024-12-15 21:11 - INFO - starting recording for gods.mp3
+2024-12-15 21:11 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 21:11 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 21:11 - ERROR - record_stream_data
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 65, in record_stream_data
+    if a.value and time.time() < end_time:
+TypeError: '<' not supported between instances of 'float' and 'NoneType'
+2024-12-15 21:11 - INFO - get_recordings
+2024-12-15 21:11 - INFO - get_recordings
+2024-12-15 21:11 - INFO - get_recordings
+2024-12-15 21:11 - INFO - stop_recording
+2024-12-15 21:13 - INFO - start_recording
+2024-12-15 21:13 - INFO - starting recording for godds2.mp3
+2024-12-15 21:13 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 21:13 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 21:13 - ERROR - record_stream_data
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 65, in record_stream_data
+    if a.value and time.time() < end_time:
+TypeError: '<' not supported between instances of 'float' and 'NoneType'
+2024-12-15 21:15 - INFO - start_recording
+2024-12-15 21:15 - INFO - starting recording for test1.mp3
+2024-12-15 21:16 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 21:16 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 21:20 - INFO - start_recording
+2024-12-15 21:20 - INFO - starting recording for test1.mp3
+2024-12-15 21:20 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 148, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 21:20 - INFO - starting server
+2024-12-15 21:21 - INFO - start_recording
+2024-12-15 21:21 - INFO - starting recording for gods.mp3
+2024-12-15 21:21 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 21:21 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 21:21 - ERROR - record_stream_data
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 65, in record_stream_data
+    if a.value and time.time() < end_time:
+TypeError: '<' not supported between instances of 'float' and 'NoneType'
+2024-12-15 21:21 - INFO - get_recordings
+2024-12-15 21:21 - INFO - stop_recording
+2024-12-15 21:21 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 148, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-15 21:22 - INFO - starting server
+2024-12-15 21:22 - INFO - start_recording
+2024-12-15 21:22 - INFO - starting recording for gods.mp3.mp3
+2024-12-15 21:22 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 21:22 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 21:22 - ERROR - record_stream_data
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 66, in record_stream_data
+    if a.value and time.time() < end_time:
+TypeError: '<' not supported between instances of 'float' and 'NoneType'
+2024-12-15 21:23 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 149, in main
+    print(n.year)
+KeyboardInterrupt
+2024-12-15 21:23 - INFO - starting server
+2024-12-15 21:24 - INFO - start_recording
+2024-12-15 21:24 - INFO - starting recording for gods.mp3.mp3
+2024-12-15 21:24 - DEBUG - Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-15 21:24 - DEBUG - http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-15 21:24 - INFO - get_recordings
+2024-12-15 21:24 - INFO - stop_recording
+2024-12-15 21:27 - ERROR - control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 156, in main
+    rec.process.join(RUNTIME)
+KeyboardInterrupt
+2024-12-15 21:27 - INFO - starting server
