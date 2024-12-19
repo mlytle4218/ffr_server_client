@@ -8,3 +8,8 @@ main_menu_options = [
     {"text":"Remove stream","func":ffrc.stream_remove},
     {"text":"Edit existing stream","func":ffrc.stream_edit}
 ]
+
+record_menu_options = [
+        {"text":"re-cord now","func":ffrc.stream_record_start_now},
+        {"text":"re-cord later","func":ffrc.stream_record_start_later}
+    ]

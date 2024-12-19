@@ -2,6 +2,15 @@ import csv
 import ffr_config
 from base_logger import logger
 import subprocess
+import tabCompleter
+import readline
+
+
+class StreamData():
+    def __init__(self, description, url, extension):
+        self.description = description
+        self.url = url
+        self.extension = extension
 
 def get_list_data():
     try:
@@ -53,3 +62,27 @@ def override_list(list_data):
     with open(ffr_config.LINK_LIST, 'w') as f:
         writer = csv.writer(f)
         writer.writerows(list_data)
+
+def load_saved_stream_data():
+    streams = []
+    with open(ffr_config.LINK_LIST, 'rt') as stream_list:
+        stream_data = sorted(list(csv.reader(stream_list)))
+        for stream in stream_data:
+            streams.append(
+                StreamData(
+                    description=stream[0],
+                    url=stream[1],
+                    extension=stream[2]
+                    )
+                )
+    return streams
+
+def get_file_path(extenstion):
+    t = tabCompleter.tabCompleter()
+    readline.set_completer_delims('\t')
+    readline.parse_and_bind("tab: complete")
+    readline.set_completer(t.pathCompleter)
+    path = input("Enter file path: ")
+    return path + "." + extenstion
+
+
