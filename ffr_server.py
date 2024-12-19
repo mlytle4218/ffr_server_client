@@ -9,9 +9,8 @@ from multiprocessing import Process, Value
 import uuid
 import recording
 import logging
-import sched
+from logging.handlers import RotatingFileHandler
 import datetime
-import timings
 
 def start_recording(url, file_details, start_time=None, end_time=None):
     try:
@@ -217,34 +216,20 @@ if __name__ == '__main__':
     SOCK = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     SOCK.bind((ffr_config.IP, ffr_config.PORT))
 
-    # scheduler = sched.scheduler(time.time, time.sleep)
-
-    # specific_time = time.mktime(time.strptime("2024-12-15 19:16:10", "%Y-%m-%d %H:%M:%S")) 
-    # specific_time2 = time.mktime(time.strptime("2024-12-15 19:16:15", "%Y-%m-%d %H:%M:%S")) 
-    # new_time = datetime.datetime(year=2024,month=12,day=13,hour=14,minute=34)
-    # scheduler.enterabs(specific_time, 1, print_something)
-    # scheduler.enterabs(specific_time2, 1, print_something)
-    # scheduler.run()
-
-    # print((specific_time))
-    # print((new_time))
-    # print(time.strftime(new_time.timestamp(), "%Y-%m-%d %H:%M:%S"))
-
-
-    # print((specific_time).strftime('%Y-%m-%d %H:%M:%S'))
-    # print((new_time).strftime('%Y-%m-%d %H:%M:%S'))
-
-    # get_date()
-
     recordings = []
+
     logging.basicConfig(
-        filename=ffr_config.SERVER_LOG_LOC,
-        encoding="utf-8",
-        filemode="a",
-        format="{asctime} - {levelname} - {message}",
-        style="{",
-        datefmt="%Y-%m-%d %H:%M",
-        level=logging.DEBUG
+        handlers=[
+            RotatingFileHandler(
+                ffr_config.SERVER_LOG_LOC,
+                maxBytes=10240000,
+                backupCount=5
+            )
+        ],
+        level=logging.DEBUG,
+        format='%(asctime)s %(levelname)s PID_%(process)d %(message)s'
     )
+
+
     logging.info("starting server")
     main()
