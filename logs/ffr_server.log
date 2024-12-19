@@ -1,0 +1,11 @@
+2024-12-19 10:43:52,186 INFO PID_341818 starting server
+2024-12-19 10:43:52,186 WARNING PID_341818 earning
+2024-12-19 10:44:44,427 ERROR PID_341818 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 175, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 10:44:45,662 INFO PID_341871 starting client
+2024-12-19 10:47:30,828 INFO PID_341995 starting client
+2024-12-19 10:50:35,062 INFO PID_342237 starting server
+2024-12-19 10:50:35,062 WARNING PID_342237 earning

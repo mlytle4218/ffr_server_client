@@ -1,0 +1,15 @@
+2024-12-19 10:05:21,383 INFO PID_341493 starting client
+2024-12-19 10:26:36,591 INFO PID_341597 starting server
+2024-12-19 10:40:48,158 ERROR PID_341597 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 176, in main
+    data = json.loads(data.decode())
+KeyboardInterrupt
+2024-12-19 10:40:48,963 INFO PID_341676 starting server
+2024-12-19 10:40:48,963 WARNING PID_341676 earning
+2024-12-19 10:43:33,151 ERROR PID_341676 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 175, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 10:49:47,937 INFO PID_342137 starting client

@@ -8,16 +8,14 @@ import requests
 from multiprocessing import Process, Value
 import uuid
 import recording
-import logging
-from logging.handlers import RotatingFileHandler
 import datetime
+from server_logger import logger
 
 def start_recording(url, file_details, start_time=None, end_time=None):
     try:
         id = uuid.uuid4()
         a=Value('b',True)
         file_handle = open(file_details, 'wb')
-        # print(url)
 
         if url.endswith(".m3u") or url.endswith(".m3u8"):
             p = Process(
@@ -42,7 +40,7 @@ def start_recording(url, file_details, start_time=None, end_time=None):
 
         recordings.append(rec)
     except Exception:
-        logging.exception("start_recording Error")
+        logger.exception("start_recording Error")
         return -1
 
 def record_stream_data(url,fhandler, a, start_time, end_time):
@@ -71,7 +69,7 @@ def record_stream_data(url,fhandler, a, start_time, end_time):
                     else:
                         break
     except Exception:
-        logging.exception("record_stream_data")
+        logger.exception("record_stream_data")
 
 def concatenate_m3u8_segments(url, fhandler, a, start_time, end_time):
     if time.time() > end_time:
@@ -136,7 +134,7 @@ def concatenate_m3u8_segments(url, fhandler, a, start_time, end_time):
                     stop_flag = a.value
 
     except Exception:
-        logging.exception("concatenate_m3u8_segments")
+        logger.exception("concatenate_m3u8_segments")
 
 def stop_recording(id):
     rec = list(filter(lambda recording: str(recording.id) == id, recordings))[0]
@@ -176,7 +174,7 @@ def main():
         try:
             data, addr = SOCK.recvfrom(1024)
             data = json.loads(data.decode())
-            logging.info(data.get("action"))
+            logger.info(data.get("action"))
 
             if data.get('action') == "start_recording":
                 url = data.get("url")
@@ -190,7 +188,7 @@ def main():
                 except Exception:
                     end_time = None
                 
-                logging.info("starting recording for {}".format(
+                logger.info("starting recording for {}".format(
                     file_details.split('/')[-1])
                     )
 
@@ -208,7 +206,7 @@ def main():
             elif data.get('action') == 'get_recordings':
                 SOCK.sendto(get_recordings().encode(), addr)
         except KeyboardInterrupt:
-            logging.exception("control c")
+            logger.exception("control c")
             exit()
 
 
@@ -218,18 +216,5 @@ if __name__ == '__main__':
 
     recordings = []
 
-    logging.basicConfig(
-        handlers=[
-            RotatingFileHandler(
-                ffr_config.SERVER_LOG_LOC,
-                maxBytes=10240000,
-                backupCount=5
-            )
-        ],
-        level=logging.DEBUG,
-        format='%(asctime)s %(levelname)s PID_%(process)d %(message)s'
-    )
-
-
-    logging.info("starting server")
+    logger.info("starting server")
     main()

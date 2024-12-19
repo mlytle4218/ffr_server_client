@@ -1,8 +1,7 @@
 import socket
 import ffr_config
 import json
-import csv
-from base_logger import logger
+from client_logger import logger
 import os
 from date import Date
 from subprocess import call

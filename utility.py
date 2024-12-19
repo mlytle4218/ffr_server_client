@@ -1,10 +1,9 @@
 import csv
 import ffr_config
-from base_logger import logger
+from client_logger import logger
 import subprocess
 import tabCompleter
 import readline
-
 
 class StreamData():
     def __init__(self, description, url, extension):
