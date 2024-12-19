@@ -13,3 +13,89 @@ Traceback (most recent call last):
     data, addr = SOCK.recvfrom(1024)
 KeyboardInterrupt
 2024-12-19 10:49:47,937 INFO PID_342137 starting client
+2024-12-19 12:56:22,471 INFO PID_342537 starting client
+2024-12-19 12:57:53,785 INFO PID_342617 starting client
+2024-12-19 12:57:57,463 INFO PID_342617 control c
+2024-12-19 12:58:03,038 INFO PID_342617 control c
+2024-12-19 12:58:05,326 INFO PID_342703 starting client
+2024-12-19 12:59:30,973 INFO PID_342778 starting client
+2024-12-19 14:11:07,731 INFO PID_342778 control c
+2024-12-19 14:11:12,156 INFO PID_342896 starting client
+2024-12-19 14:11:14,785 INFO PID_342896 control c
+2024-12-19 14:11:17,863 INFO PID_342933 starting client
+2024-12-19 14:11:20,998 INFO PID_342933 control c
+2024-12-19 14:11:22,368 INFO PID_342982 starting client
+2024-12-19 14:11:28,687 INFO PID_342982 control c
+2024-12-19 14:11:30,063 INFO PID_343017 starting client
+2024-12-19 14:11:33,687 INFO PID_343017 control c
+2024-12-19 14:14:48,640 INFO PID_343120 starting client
+2024-12-19 14:15:37,362 INFO PID_343175 starting client
+2024-12-19 14:17:22,052 INFO PID_343262 starting client
+2024-12-19 14:17:34,791 ERROR PID_343262 get recordings
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 88, in get_recordings
+    data, _ = SOCK.recvfrom(1024)
+TimeoutError: timed out
+2024-12-19 14:19:07,793 INFO PID_343412 starting client
+2024-12-19 14:19:19,570 ERROR PID_343412 get recordings
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 88, in get_recordings
+    data, _ = SOCK.recvfrom(1024)
+TimeoutError: timed out
+2024-12-19 14:19:19,573 ERROR PID_343412 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 206, in menu_choice
+    for i,each in enumerate(options):
+TypeError: 'NoneType' object is not iterable
+2024-12-19 14:19:19,573 ERROR PID_343412 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 214, in menu_choice
+    options[int(choice_made)-1]["func"]()
+  File "/home/marc/ffr/ffr_client.py", line 138, in stream_record_stop
+    print(recordings[int(choice_made)-1])
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-12-19 14:20:37,979 INFO PID_343512 starting client
+2024-12-19 14:20:51,363 ERROR PID_343512 get recordings
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 88, in get_recordings
+    data, _ = SOCK.recvfrom(1024)
+TimeoutError: timed out
+2024-12-19 14:20:51,366 ERROR PID_343512 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 206, in menu_choice
+    for i,each in enumerate(options):
+TypeError: 'NoneType' object is not iterable
+2024-12-19 14:20:51,366 ERROR PID_343512 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 214, in menu_choice
+    options[int(choice_made)-1]["func"]()
+  File "/home/marc/ffr/ffr_client.py", line 138, in stream_record_stop
+    print(recordings[int(choice_made)-1])
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-12-19 14:21:41,899 INFO PID_343600 starting client
+2024-12-19 14:21:53,153 ERROR PID_343600 get recordings
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 88, in get_recordings
+    data, _ = SOCK.recvfrom(1024)
+TimeoutError: timed out
+2024-12-19 14:21:54,962 ERROR PID_343600 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 207, in menu_choice
+    for i,each in enumerate(options):
+TypeError: 'NoneType' object is not iterable
+2024-12-19 14:21:54,963 ERROR PID_343600 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 215, in menu_choice
+    options[int(choice_made)-1]["func"]()
+  File "/home/marc/ffr/ffr_client.py", line 139, in stream_record_stop
+    print(recordings[int(choice_made)-1])
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-12-19 14:22:05,231 INFO PID_343752 starting client
+2024-12-19 14:23:18,442 ERROR PID_343752 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 215, in menu_choice
+    if int(choice_made) > 0:
+  File "/home/marc/ffr/ffr_client.py", line 139, in stream_record_stop
+    print(recordings[int(choice_made)-1])
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-12-19 14:23:21,182 INFO PID_343825 starting client
