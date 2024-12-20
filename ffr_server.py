@@ -13,6 +13,11 @@ from server_logger import logger
 
 def start_recording(url, file_details, start_time=None, end_time=None):
     try:
+        s_time = start_time if start_time else time.time()
+        logger.info("tttuuuppplllleeee")
+        logger.info(s_time)
+        logger.info(type(s_time))
+
         id = uuid.uuid4()
         a=Value('b',True)
         file_handle = open(file_details, 'wb')
@@ -34,7 +39,7 @@ def start_recording(url, file_details, start_time=None, end_time=None):
                 file_handler=file_handle, 
                 flag=a, 
                 file_details=file_details,
-                start_time=start_time,
+                start_time=s_time,
                 end_time=end_time
                 )
 
@@ -156,7 +161,12 @@ def stop_recording(id):
 def get_recordings():
     temp = []
     for rec in recordings:
-        temp.append({"id":str(rec.id),"file_details":rec.file_details})
+        temp.append({
+            "id":str(rec.id),
+            "file_details":rec.file_details,
+            "start_time": rec.get_start_time(),
+            "end_time": rec.end_time
+            })
     return json.dumps(temp)
 
 def print_something(bob="default"):
@@ -177,26 +187,41 @@ def main():
             logger.info(data.get("action"))
 
             if data.get('action') == "start_recording":
+                logger.info(data)
                 url = data.get("url")
                 file_details = data.get("file_details")
-                try:
-                    start_time = data.get("start_time")
-                except Exception:
-                    start_time = time.time.now()
-                try:
-                    end_time = data.get("end_time")
-                except Exception:
-                    end_time = None
+                # start_time = None
+                # start_time = data.get("start_time")
+                # start_time = data.get("start_time") if data.get("start_time") else time.time()
+
+                s_time = data.get("start_time")
+                if not data.get("start_time"):
+                    s_time = time.time()
+
+                e_time = data.get("end_time")
+                if not data.get("end_time"):
+                    e_time = None
+                    
+                # try:
+                #     start_time = data.get("start_time")
+                # except Exception:
+                #     start_time = time.time.now()
+                # try:
+                #     end_time = data.get("end_time")
+                # except Exception:
+                #     end_time = None
                 
                 logger.info("starting recording for {}".format(
                     file_details.split('/')[-1])
                     )
+                
+                # logger.info(s_time)
 
                 rec_uuid = start_recording(
                     url=url,
                     file_details=file_details,
-                    start_time=start_time,
-                    end_time=end_time
+                    start_time=s_time,
+                    end_time=e_time
                     )
                 r_data = json.dumps({"id":str(rec_uuid)})
                 SOCK.sendto(r_data.encode(), addr)

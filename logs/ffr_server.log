@@ -18,3 +18,278 @@ KeyboardInterrupt
 2024-12-19 14:22:06,587 INFO PID_343731 get_recordings
 2024-12-19 14:23:22,834 INFO PID_343731 get_recordings
 2024-12-19 14:23:27,674 INFO PID_343731 get_recordings
+2024-12-19 14:50:48,961 INFO PID_343731 start_recording
+2024-12-19 14:50:48,961 INFO PID_343731 starting recording for gods.mp3
+2024-12-19 14:50:48,980 DEBUG PID_344315 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 14:50:49,998 DEBUG PID_344315 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 14:50:57,466 INFO PID_343731 get_recordings
+2024-12-19 14:51:33,897 INFO PID_343731 get_recordings
+2024-12-19 14:51:48,003 INFO PID_343731 get_recordings
+2024-12-19 14:53:03,960 INFO PID_343731 get_recordings
+2024-12-19 14:56:21,254 INFO PID_343731 get_recordings
+2024-12-19 14:56:54,366 INFO PID_343731 get_recordings
+2024-12-19 14:58:11,390 INFO PID_343731 get_recordings
+2024-12-19 14:59:06,598 INFO PID_343731 get_recordings
+2024-12-19 15:01:05,019 ERROR PID_343731 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 175, in main
+    def main():
+KeyboardInterrupt
+2024-12-19 15:01:24,478 INFO PID_344884 starting server
+2024-12-19 15:01:41,572 INFO PID_344884 start_recording
+2024-12-19 15:01:41,573 INFO PID_344884 starting recording for gods.mp3
+2024-12-19 15:01:41,580 DEBUG PID_345002 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:01:42,112 DEBUG PID_345002 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:01:49,701 INFO PID_344884 get_recordings
+2024-12-19 15:02:31,083 INFO PID_344884 get_recordings
+2024-12-19 15:07:24,461 ERROR PID_344884 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 180, in main
+    while True:
+KeyboardInterrupt
+2024-12-19 15:09:13,382 INFO PID_345276 starting server
+2024-12-19 15:09:33,449 INFO PID_345276 start_recording
+2024-12-19 15:09:33,449 INFO PID_345276 starting recording for gods.mp3.mp3
+2024-12-19 15:09:33,455 DEBUG PID_345372 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:09:34,162 DEBUG PID_345372 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:09:46,369 INFO PID_345276 get_recordings
+2024-12-19 15:11:26,429 ERROR PID_345276 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 183, in main
+    data = json.loads(data.decode())
+KeyboardInterrupt
+2024-12-19 15:11:27,491 INFO PID_345446 starting server
+2024-12-19 15:11:57,424 INFO PID_345446 start_recording
+2024-12-19 15:11:57,424 INFO PID_345446 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:11:57,424 INFO PID_345446 starting recording for gods.mp3
+2024-12-19 15:11:57,431 DEBUG PID_345599 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:11:58,199 DEBUG PID_345599 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:12:38,968 ERROR PID_345446 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 182, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 15:13:14,393 INFO PID_345710 starting server
+2024-12-19 15:13:28,000 INFO PID_345710 start_recording
+2024-12-19 15:13:28,000 INFO PID_345710 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:13:28,000 INFO PID_345710 starting recording for gods.mp3
+2024-12-19 15:13:28,000 INFO PID_345710 None
+2024-12-19 15:13:28,007 DEBUG PID_345803 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:13:28,560 DEBUG PID_345803 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:14:18,080 ERROR PID_345710 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 182, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 15:14:19,067 INFO PID_345849 starting server
+2024-12-19 15:14:40,440 INFO PID_345849 start_recording
+2024-12-19 15:14:40,440 INFO PID_345849 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:14:40,441 INFO PID_345849 starting recording for gods.mp3
+2024-12-19 15:14:40,441 INFO PID_345849 None
+2024-12-19 15:14:40,447 DEBUG PID_345924 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:14:41,042 DEBUG PID_345924 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:15:24,467 ERROR PID_345849 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 182, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 15:15:25,379 INFO PID_345984 starting server
+2024-12-19 15:15:41,666 INFO PID_345984 start_recording
+2024-12-19 15:15:41,666 INFO PID_345984 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:15:41,666 INFO PID_345984 starting recording for gods.mp3
+2024-12-19 15:15:41,666 INFO PID_345984 None
+2024-12-19 15:15:41,672 DEBUG PID_346040 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:15:42,282 DEBUG PID_346040 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:17:15,460 ERROR PID_345984 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 182, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 15:17:16,183 INFO PID_346111 starting server
+2024-12-19 15:17:24,169 INFO PID_346111 start_recording
+2024-12-19 15:17:24,169 INFO PID_346111 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:17:24,169 INFO PID_346111 starting recording for gods.mp3
+2024-12-19 15:17:24,169 INFO PID_346111 None
+2024-12-19 15:17:24,178 DEBUG PID_346148 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:17:24,883 DEBUG PID_346148 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:17:55,595 ERROR PID_346111 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 182, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 15:20:16,846 INFO PID_346261 starting server
+2024-12-19 15:20:28,800 INFO PID_346261 start_recording
+2024-12-19 15:20:28,800 INFO PID_346261 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:20:28,801 INFO PID_346261 ^^^^^^^^^^
+2024-12-19 15:20:28,801 INFO PID_346261 starting recording for gods.mp3
+2024-12-19 15:20:28,801 INFO PID_346261 None
+2024-12-19 15:20:28,814 DEBUG PID_346313 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:20:29,533 DEBUG PID_346313 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:24:31,581 ERROR PID_346261 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 182, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 15:24:32,332 INFO PID_346361 starting server
+2024-12-19 15:24:40,581 ERROR PID_346361 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 182, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 15:25:50,582 INFO PID_346453 starting server
+2024-12-19 15:26:01,389 INFO PID_346453 start_recording
+2024-12-19 15:26:01,389 INFO PID_346453 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:26:01,389 INFO PID_346453 starting recording for gods.mp3
+2024-12-19 15:26:01,389 INFO PID_346453 1734650761.3895597
+2024-12-19 15:26:01,393 INFO PID_346453 None
+2024-12-19 15:26:01,396 DEBUG PID_346530 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:26:02,130 DEBUG PID_346530 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:26:21,517 INFO PID_346453 get_recordings
+2024-12-19 15:27:51,860 INFO PID_346453 get_recordings
+2024-12-19 15:29:09,928 ERROR PID_346453 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 182, in main
+    while True:
+KeyboardInterrupt
+2024-12-19 15:29:11,160 INFO PID_346755 starting server
+2024-12-19 15:29:29,011 INFO PID_346755 start_recording
+2024-12-19 15:29:29,012 INFO PID_346755 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:29:29,012 INFO PID_346755 starting recording for gods.mp3
+2024-12-19 15:29:29,019 DEBUG PID_346848 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:29:30,009 DEBUG PID_346848 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:29:46,140 INFO PID_346755 get_recordings
+2024-12-19 15:29:46,140 INFO PID_346755 ^^^^^^^^^^^^^^^^
+2024-12-19 15:29:46,140 INFO PID_346755 <class 'tuple'>
+2024-12-19 15:33:23,807 ERROR PID_346755 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 184, in main
+    while True:
+KeyboardInterrupt
+2024-12-19 15:33:24,716 INFO PID_346984 starting server
+2024-12-19 15:33:47,234 INFO PID_346984 start_recording
+2024-12-19 15:33:47,234 INFO PID_346984 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:33:47,234 INFO PID_346984 starting recording for gods.mp3
+2024-12-19 15:33:47,234 INFO PID_346984 tttuuuppplllleeee
+2024-12-19 15:33:47,234 INFO PID_346984 1734651227.234445
+2024-12-19 15:33:47,242 DEBUG PID_347074 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:33:48,055 DEBUG PID_347074 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:35:14,070 ERROR PID_346984 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 186, in main
+    try:
+KeyboardInterrupt
+2024-12-19 15:35:14,756 INFO PID_347160 starting server
+2024-12-19 15:35:31,432 INFO PID_347160 start_recording
+2024-12-19 15:35:31,432 INFO PID_347160 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:35:31,432 INFO PID_347160 starting recording for gods.mp3
+2024-12-19 15:35:31,432 INFO PID_347160 tttuuuppplllleeee
+2024-12-19 15:35:31,432 INFO PID_347160 1734651331.4323337
+2024-12-19 15:35:31,432 INFO PID_347160 <class 'float'>
+2024-12-19 15:35:31,438 DEBUG PID_347234 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:35:32,100 DEBUG PID_347234 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:35:44,272 INFO PID_347160 get_recordings
+2024-12-19 15:35:44,272 INFO PID_347160 ^^^^^^^^^^^^^^^^
+2024-12-19 15:35:44,272 INFO PID_347160 <class 'tuple'>
+2024-12-19 15:36:44,981 INFO PID_347449 starting server
+2024-12-19 15:36:58,697 INFO PID_347449 start_recording
+2024-12-19 15:36:58,697 INFO PID_347449 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:36:58,697 INFO PID_347449 starting recording for gods.mp3
+2024-12-19 15:36:58,697 INFO PID_347449 tttuuuppplllleeee
+2024-12-19 15:36:58,697 INFO PID_347449 1734651418.6978436
+2024-12-19 15:36:58,697 INFO PID_347449 <class 'float'>
+2024-12-19 15:36:58,704 DEBUG PID_347539 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:36:59,337 DEBUG PID_347539 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:37:10,953 INFO PID_347449 get_recordings
+2024-12-19 15:37:10,953 INFO PID_347449 ^^^^^^^^^^^^^^^^
+2024-12-19 15:37:10,953 INFO PID_347449 <class 'tuple'>
+2024-12-19 15:40:17,819 INFO PID_347791 starting server
+2024-12-19 15:40:31,743 INFO PID_347791 start_recording
+2024-12-19 15:40:31,743 INFO PID_347791 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:40:31,743 INFO PID_347791 starting recording for gods.mp3
+2024-12-19 15:40:31,743 INFO PID_347791 tttuuuppplllleeee
+2024-12-19 15:40:31,743 INFO PID_347791 1734651631.7435746
+2024-12-19 15:40:31,743 INFO PID_347791 <class 'float'>
+2024-12-19 15:40:31,751 DEBUG PID_347851 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:40:32,539 DEBUG PID_347851 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:40:53,014 INFO PID_347791 get_recordings
+2024-12-19 15:40:53,015 INFO PID_347791 ^^^^^^^^^^^^^^^^
+2024-12-19 15:40:53,015 INFO PID_347791 <class 'tuple'>
+2024-12-19 15:41:13,083 ERROR PID_347791 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 187, in main
+    data, addr = SOCK.recvfrom(1024)
+KeyboardInterrupt
+2024-12-19 15:41:13,885 INFO PID_347963 starting server
+2024-12-19 15:42:28,824 INFO PID_347963 start_recording
+2024-12-19 15:42:28,825 INFO PID_347963 {'action': 'start_recording', 'file_details': '/home/marc/ffr/gods.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2024-12-19 15:42:28,825 INFO PID_347963 starting recording for gods.mp3
+2024-12-19 15:42:28,825 INFO PID_347963 tttuuuppplllleeee
+2024-12-19 15:42:28,825 INFO PID_347963 1734651748.825207
+2024-12-19 15:42:28,825 INFO PID_347963 <class 'float'>
+2024-12-19 15:42:28,832 DEBUG PID_348105 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2024-12-19 15:42:29,413 DEBUG PID_348105 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2024-12-19 15:42:40,531 INFO PID_347963 get_recordings
+2024-12-19 15:42:40,531 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:42:40,531 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:43:34,254 INFO PID_347963 get_recordings
+2024-12-19 15:43:34,254 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:43:34,255 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:44:31,307 INFO PID_347963 get_recordings
+2024-12-19 15:44:31,307 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:44:31,307 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:45:53,567 INFO PID_347963 get_recordings
+2024-12-19 15:45:53,568 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:45:53,568 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:46:39,079 INFO PID_347963 get_recordings
+2024-12-19 15:46:39,079 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:46:39,079 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:47:07,676 INFO PID_347963 get_recordings
+2024-12-19 15:47:07,676 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:47:07,676 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:47:26,155 INFO PID_347963 get_recordings
+2024-12-19 15:47:26,155 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:47:26,155 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:50:18,287 INFO PID_347963 get_recordings
+2024-12-19 15:50:18,288 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:50:18,288 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:52:02,459 INFO PID_347963 get_recordings
+2024-12-19 15:52:02,459 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:52:02,459 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:52:24,924 INFO PID_347963 get_recordings
+2024-12-19 15:52:24,924 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:52:24,924 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:52:48,274 INFO PID_347963 get_recordings
+2024-12-19 15:52:48,274 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:52:48,274 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:53:58,205 INFO PID_347963 get_recordings
+2024-12-19 15:53:58,205 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:53:58,205 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:54:01,622 INFO PID_347963 get_recordings
+2024-12-19 15:54:01,622 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:54:01,622 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:54:35,706 INFO PID_347963 get_recordings
+2024-12-19 15:54:35,706 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:54:35,706 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:54:56,704 INFO PID_347963 get_recordings
+2024-12-19 15:54:56,704 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:54:56,704 INFO PID_347963 <class 'tuple'>
+2024-12-19 15:57:06,725 INFO PID_347963 get_recordings
+2024-12-19 15:57:06,725 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 15:57:06,725 INFO PID_347963 <class 'tuple'>
+2024-12-19 16:03:18,732 INFO PID_347963 get_recordings
+2024-12-19 16:03:18,732 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 16:03:18,732 INFO PID_347963 <class 'tuple'>
+2024-12-19 16:05:26,530 INFO PID_347963 get_recordings
+2024-12-19 16:05:26,530 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 16:05:26,534 INFO PID_347963 <class 'tuple'>
+2024-12-19 16:06:14,826 INFO PID_347963 get_recordings
+2024-12-19 16:06:14,826 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 16:06:14,826 INFO PID_347963 <class 'tuple'>
+2024-12-19 16:06:55,753 INFO PID_347963 get_recordings
+2024-12-19 16:06:55,753 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 16:06:55,753 INFO PID_347963 <class 'tuple'>
+2024-12-19 16:08:01,400 INFO PID_347963 get_recordings
+2024-12-19 16:08:01,401 INFO PID_347963 ^^^^^^^^^^^^^^^^
+2024-12-19 16:08:01,401 INFO PID_347963 <class 'tuple'>
+2024-12-19 16:08:02,681 INFO PID_347963 stop_recording
+2024-12-19 16:08:04,801 INFO PID_347963 get_recordings

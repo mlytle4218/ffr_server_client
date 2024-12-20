@@ -13,11 +13,11 @@ class Recording():
         self.end_time = end_time
 
     def __str__(self):
-        print(type(self.id))
-        print(type(self.process))
-        print(type(self.file_details))
-        print(type(self.file_handler))
-        print(type(self.flag))
+        # print(type(self.id))
+        # print(type(self.process))
+        # print(type(self.file_details))
+        # print(type(self.file_handler))
+        # print(type(self.flag))
         
         print((self.id))
         print((self.process))
@@ -25,3 +25,6 @@ class Recording():
         print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(self.start_time)))
         # print((self.file_handler))
         # print((self.flag))
+
+    def get_start_time(self):
+        return self.start_time[0]

@@ -99,3 +99,113 @@ Traceback (most recent call last):
     print(recordings[int(choice_made)-1])
 TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
 2024-12-19 14:23:21,182 INFO PID_343825 starting client
+2024-12-19 14:50:29,888 INFO PID_344214 starting client
+2024-12-19 14:51:32,082 INFO PID_344413 starting client
+2024-12-19 14:51:45,832 INFO PID_344456 starting client
+2024-12-19 14:53:02,349 INFO PID_344513 starting client
+2024-12-19 14:53:03,961 INFO PID_344513 [{'id': 'e0a2762d-f9a9-4c4e-a432-541e708e030b', 'file_details': '/home/marc/ffr/gods.mp3'}]
+2024-12-19 14:56:19,788 INFO PID_344580 starting client
+2024-12-19 14:56:21,255 INFO PID_344580 [{'id': 'e0a2762d-f9a9-4c4e-a432-541e708e030b', 'file_details': '/home/marc/ffr/gods.mp3'}]
+2024-12-19 14:56:53,478 INFO PID_344648 starting client
+2024-12-19 14:56:54,367 INFO PID_344648 [{'id': 'e0a2762d-f9a9-4c4e-a432-541e708e030b', 'file_details': '/home/marc/ffr/gods.mp3'}]
+2024-12-19 14:58:09,716 INFO PID_344667 starting client
+2024-12-19 14:58:11,390 INFO PID_344667 [{'id': 'e0a2762d-f9a9-4c4e-a432-541e708e030b', 'file_details': '/home/marc/ffr/gods.mp3'}]
+2024-12-19 14:59:05,347 INFO PID_344714 starting client
+2024-12-19 14:59:06,599 INFO PID_344714 [{'id': 'e0a2762d-f9a9-4c4e-a432-541e708e030b', 'file_details': '/home/marc/ffr/gods.mp3'}]
+2024-12-19 15:01:28,639 INFO PID_344906 starting client
+2024-12-19 15:01:49,702 INFO PID_344906 [{'id': 'ccc8739e-2282-4bdf-9d53-51be6177095b', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': [None], 'end_time': None}]
+2024-12-19 15:01:56,250 INFO PID_344906 control c
+2024-12-19 15:02:28,782 INFO PID_345136 starting client
+2024-12-19 15:02:31,083 INFO PID_345136 [{'id': 'ccc8739e-2282-4bdf-9d53-51be6177095b', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': [None], 'end_time': None}]
+2024-12-19 15:09:21,852 INFO PID_345312 starting client
+2024-12-19 15:09:46,370 INFO PID_345312 [{'id': '5d30585f-d2ab-4674-b2f6-4eb478f2d746', 'file_details': '/home/marc/ffr/gods.mp3.mp3', 'start_time': [1734649773.4496121], 'end_time': None}]
+2024-12-19 15:11:46,423 INFO PID_345543 starting client
+2024-12-19 15:13:16,784 INFO PID_345731 starting client
+2024-12-19 15:26:21,518 INFO PID_345731 [{'id': '5d07a53e-2744-43a3-9ee1-5c8e5c946231', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': [1734650761.3895597], 'end_time': None}]
+2024-12-19 15:27:49,128 INFO PID_346659 starting client
+2024-12-19 15:27:51,861 INFO PID_346659 [{'id': '5d07a53e-2744-43a3-9ee1-5c8e5c946231', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': [1734650761.3895597], 'end_time': None}]
+2024-12-19 15:29:18,144 INFO PID_346792 starting client
+2024-12-19 15:29:46,141 INFO PID_346792 [{'id': 'ce2a015c-ef06-4779-86ac-98d2efaa181b', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': [1734650969.0121188], 'end_time': None}]
+2024-12-19 15:35:17,121 INFO PID_347190 starting client
+2024-12-19 15:35:54,282 ERROR PID_347190 get recordings
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 121, in get_recordings
+    data, _ = SOCK.recvfrom(1024)
+TimeoutError: timed out
+2024-12-19 15:36:38,255 INFO PID_347190 None
+2024-12-19 15:36:49,101 INFO PID_347473 starting client
+2024-12-19 15:37:20,963 ERROR PID_347473 get recordings
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 121, in get_recordings
+    data, _ = SOCK.recvfrom(1024)
+TimeoutError: timed out
+2024-12-19 15:40:11,880 INFO PID_347473 None
+2024-12-19 15:40:21,276 INFO PID_347824 starting client
+2024-12-19 15:40:53,015 INFO PID_347824 [{'id': 'd87dbf9f-b900-41a7-a8f7-d02f77da4fd2', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': [1734651631.7435746], 'end_time': None}]
+2024-12-19 15:42:15,634 INFO PID_348058 starting client
+2024-12-19 15:42:18,201 INFO PID_348072 starting client
+2024-12-19 15:42:40,532 INFO PID_348072 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:43:32,794 INFO PID_348256 starting client
+2024-12-19 15:43:34,255 INFO PID_348256 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:44:29,362 INFO PID_348330 starting client
+2024-12-19 15:44:31,308 INFO PID_348330 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:45:51,791 INFO PID_348428 starting client
+2024-12-19 15:45:53,568 INFO PID_348428 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:46:38,068 INFO PID_348499 starting client
+2024-12-19 15:46:39,079 INFO PID_348499 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:47:05,998 INFO PID_348544 starting client
+2024-12-19 15:47:07,677 INFO PID_348544 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:47:24,992 INFO PID_348613 starting client
+2024-12-19 15:47:26,156 INFO PID_348613 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:50:17,007 INFO PID_348654 starting client
+2024-12-19 15:50:18,288 INFO PID_348654 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:52:01,211 INFO PID_348693 starting client
+2024-12-19 15:52:02,459 INFO PID_348693 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:52:24,189 INFO PID_348747 starting client
+2024-12-19 15:52:24,924 INFO PID_348747 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:52:40,523 INFO PID_348747 2
+2024-12-19 15:52:47,364 INFO PID_348806 starting client
+2024-12-19 15:52:48,274 INFO PID_348806 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:53:57,158 INFO PID_348876 starting client
+2024-12-19 15:53:58,205 INFO PID_348876 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:53:58,207 ERROR PID_348876 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 178, in stream_record_stop
+    datetime.datetime.fromtimestamp(
+TypeError: 'NoneType' object cannot be interpreted as an integer
+2024-12-19 15:54:01,623 INFO PID_348876 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:54:01,624 ERROR PID_348876 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 178, in stream_record_stop
+    datetime.datetime.fromtimestamp(
+TypeError: 'NoneType' object cannot be interpreted as an integer
+2024-12-19 15:54:34,768 INFO PID_348968 starting client
+2024-12-19 15:54:35,707 INFO PID_348968 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:54:55,343 INFO PID_349007 starting client
+2024-12-19 15:54:56,704 INFO PID_349007 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 15:54:56,706 ERROR PID_349007 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 178, in stream_record_stop
+    datetime.datetime.fromtimestamp(
+TypeError: 'NoneType' object cannot be interpreted as an integer
+2024-12-19 15:57:06,039 INFO PID_349053 starting client
+2024-12-19 15:57:06,725 INFO PID_349053 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 16:03:18,732 INFO PID_349053 [{'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}]
+2024-12-19 16:05:25,439 INFO PID_349163 starting client
+2024-12-19 16:05:27,491 INFO PID_349163 1
+2024-12-19 16:05:27,491 ERROR PID_349163 menu_choice
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_client.py", line 190, in stream_record_stop
+    logger.info(recordings[rec_choice_made-1])
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+2024-12-19 16:06:13,745 INFO PID_349197 starting client
+2024-12-19 16:06:16,402 INFO PID_349197 1
+2024-12-19 16:06:16,403 INFO PID_349197 {'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}
+2024-12-19 16:06:54,555 INFO PID_349269 starting client
+2024-12-19 16:06:57,776 INFO PID_349269 1
+2024-12-19 16:06:57,776 INFO PID_349269 {'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}
+2024-12-19 16:06:57,776 INFO PID_349269 da8e7db7-1f46-40e4-9986-4e7f31ea9047
+2024-12-19 16:08:00,097 INFO PID_349337 starting client
+2024-12-19 16:08:02,680 INFO PID_349337 1
+2024-12-19 16:08:02,680 INFO PID_349337 {'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}
+2024-12-19 16:08:02,680 INFO PID_349337 da8e7db7-1f46-40e4-9986-4e7f31ea9047

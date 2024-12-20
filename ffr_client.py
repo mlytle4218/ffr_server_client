@@ -7,6 +7,7 @@ from date import Date
 from subprocess import call
 import utility
 import menus
+import datetime
 
 
 def choose_stream():
@@ -157,14 +158,65 @@ def stream_record_start():
 def stream_record_stop():
     """
     Lets a user communicate with the server and see recordings currently in 
-    progress. The user can stop the recording or quit
+    progress. The user can stop the recording by passing the id to the
+    stop_recodring function or just quit the menu
     """
     recordings = get_recordings()
     if recordings:
-        choice_made = menu_choice(recordings)
+        try:
+            while True:
+                os.system('clear')
+                for i,each in enumerate(recordings):
+                    e_time = each["end_time"] if each["end_time"] else None
+
+                    print("number {} {} {} {}".format(
+                            i+1, 
+                            each["file_details"], 
+                            datetime.datetime.fromtimestamp(
+                                each["start_time"]
+                                ).strftime("%Y-%m-%d %H:%M") , 
+                            e_time
+                            )
+                        )
+                print("Letter q Quit")
+                rec_choice_made=input("Choice: ")
+                
+                try:
+                    int(rec_choice_made)
+                    if len(rec_choice_made)+1 > int(rec_choice_made) > 0:
+                        stop_recording(recordings[int(rec_choice_made)-1]["id"])
+                        break
+                    else:
+                        input("1invalid choice - Enter to continue")
+                except ValueError as e:
+                    if rec_choice_made == "q":
+                        break
+                    input("2invalid choice - Enter to continue")
+                except IndexError as e:
+                    input("3invalid choice - Enter to continue")
+        except KeyboardInterrupt:
+            logger.info("control c")
+        except TypeError:
+            logger.exception("menu_choice")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         # print(recordings[int(choice_made)-1])
-        stop_recording(recordings[int(choice_made)-1]["id"])
-        input("recording stopped - Enter to continue")
+        # stop_recording(recordings[int(choice_made)-1]["id"])
+        # input("recording stopped - Enter to continue")
     else:
         input("No recording currently in progress - Enter to continue")
 
@@ -239,6 +291,9 @@ def stream_edit():
                     data[i][2] = extension
                     utility.override_list(data)
                     input("Stream updated - Enter to continue")
+
+
+
 
 def menu_choice(options):
     """
