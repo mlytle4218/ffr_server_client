@@ -178,8 +178,6 @@ def get_date(desc):
     print(n.year)
 
 def main():
-    
-
     while True:
         try:
             data, addr = SOCK.recvfrom(1024)
@@ -190,9 +188,6 @@ def main():
                 logger.info(data)
                 url = data.get("url")
                 file_details = data.get("file_details")
-                # start_time = None
-                # start_time = data.get("start_time")
-                # start_time = data.get("start_time") if data.get("start_time") else time.time()
 
                 s_time = data.get("start_time")
                 if not data.get("start_time"):
@@ -201,21 +196,10 @@ def main():
                 e_time = data.get("end_time")
                 if not data.get("end_time"):
                     e_time = None
-                    
-                # try:
-                #     start_time = data.get("start_time")
-                # except Exception:
-                #     start_time = time.time.now()
-                # try:
-                #     end_time = data.get("end_time")
-                # except Exception:
-                #     end_time = None
                 
                 logger.info("starting recording for {}".format(
                     file_details.split('/')[-1])
                     )
-                
-                # logger.info(s_time)
 
                 rec_uuid = start_recording(
                     url=url,

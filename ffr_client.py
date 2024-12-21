@@ -292,9 +292,6 @@ def stream_edit():
                     utility.override_list(data)
                     input("Stream updated - Enter to continue")
 
-
-
-
 def menu_choice(options):
     """
     Displays nubmered menu of objects containing a description and function 
