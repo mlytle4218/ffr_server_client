@@ -293,3 +293,8 @@ KeyboardInterrupt
 2024-12-19 16:08:01,401 INFO PID_347963 <class 'tuple'>
 2024-12-19 16:08:02,681 INFO PID_347963 stop_recording
 2024-12-19 16:08:04,801 INFO PID_347963 get_recordings
+2024-12-21 14:36:02,807 ERROR PID_347963 control c
+Traceback (most recent call last):
+  File "/home/marc/ffr/ffr_server.py", line 187, in main
+    if data.get('action') == "start_recording":
+KeyboardInterrupt
