@@ -209,3 +209,66 @@ TypeError: unsupported operand type(s) for -: 'str' and 'int'
 2024-12-19 16:08:02,680 INFO PID_349337 1
 2024-12-19 16:08:02,680 INFO PID_349337 {'id': 'da8e7db7-1f46-40e4-9986-4e7f31ea9047', 'file_details': '/home/marc/ffr/gods.mp3', 'start_time': 1734651748.825207, 'end_time': None}
 2024-12-19 16:08:02,680 INFO PID_349337 da8e7db7-1f46-40e4-9986-4e7f31ea9047
+2025-01-06 16:24:57,484 INFO PID_3177308 starting client
+2025-01-06 16:25:19,156 INFO PID_3177308 control c
+2025-01-06 16:29:51,366 INFO PID_3177433 starting client
+2025-01-06 16:30:07,100 INFO PID_3177441 starting client
+2025-01-18 16:42:45,387 INFO PID_4193719 starting client
+2025-01-18 16:43:43,761 INFO PID_4193741 starting client
+2025-01-18 16:44:18,626 ERROR PID_4193741 get recordings
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_client.py", line 122, in get_recordings
+    data, _ = SOCK.recvfrom(1024)
+              ~~~~~~~~~~~~~^^^^^^
+TimeoutError: timed out
+2025-02-01 16:27:36,357 INFO PID_1983468 starting client
+2025-02-01 16:27:55,094 ERROR PID_1983468 get recordings
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_client.py", line 122, in get_recordings
+    data, _ = SOCK.recvfrom(1024)
+              ~~~~~~~~~~~~~^^^^^^
+TimeoutError: timed out
+2025-02-01 16:29:13,549 INFO PID_1986075 starting client
+2025-02-01 16:46:41,579 INFO PID_2012202 starting client
+2025-02-01 16:49:33,975 INFO PID_2017795 starting client
+2025-02-01 16:56:54,233 INFO PID_2032513 starting client
+2025-02-01 17:01:55,409 INFO PID_2042754 starting client
+2025-02-01 17:03:18,268 INFO PID_2045728 starting client
+2025-02-01 17:14:39,365 INFO PID_2068683 starting client
+2025-02-01 17:17:22,458 INFO PID_2074281 starting client
+2025-02-01 17:21:29,262 INFO PID_2082678 starting client
+2025-02-01 17:23:11,365 INFO PID_2086208 starting client
+2025-02-01 17:26:19,490 INFO PID_2092711 starting client
+2025-02-01 17:33:45,050 INFO PID_2107804 starting client
+2025-02-01 17:36:10,214 INFO PID_2112617 starting client
+2025-02-01 17:51:31,231 INFO PID_2143315 starting client
+2025-02-01 17:54:46,346 INFO PID_2149860 starting client
+2025-02-01 18:14:40,261 INFO PID_2189752 starting client
+2025-02-04 11:07:44,515 INFO PID_1243134 starting client
+2025-02-22 14:28:35,793 INFO PID_1564078 starting client
+2025-02-22 14:29:35,345 ERROR PID_1564078 menu_choice
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_client.py", line 175, in stream_record_stop
+    datetime.datetime.fromtimestamp(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        each["start_time"]
+        ^^^^^^^^^^^^^^^^^^
+        ).strftime("%Y-%m-%d %H:%M") ,
+        ^
+TypeError: 'dict' object cannot be interpreted as an integer
+2025-02-22 14:29:38,476 ERROR PID_1564078 menu_choice
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_client.py", line 175, in stream_record_stop
+    datetime.datetime.fromtimestamp(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        each["start_time"]
+        ^^^^^^^^^^^^^^^^^^
+        ).strftime("%Y-%m-%d %H:%M") ,
+        ^
+TypeError: 'dict' object cannot be interpreted as an integer
+2025-02-22 14:47:07,465 INFO PID_1576917 starting client
+2025-02-22 15:02:23,880 INFO PID_1582522 starting client
+2025-02-22 15:32:00,395 INFO PID_1598872 starting client
+2025-02-22 15:43:09,610 INFO PID_1606915 starting client
+2025-02-22 15:44:56,077 INFO PID_1608156 starting client
+2025-02-22 15:46:57,635 INFO PID_1608349 starting client

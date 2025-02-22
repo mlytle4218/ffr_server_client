@@ -135,7 +135,7 @@ def stream_record_start_now():
     if stm:
         file_path = utility.get_file_path(stm.extension)
         start_recording(file_path, stm.url)
-        input("recoding started - Enter to continue")
+        input("recording started - Enter to continue")
 
 def stream_record_start_later():
     """
@@ -166,26 +166,31 @@ def stream_record_stop():
         try:
             while True:
                 os.system('clear')
-                for i,each in enumerate(recordings):
-                    e_time = each["end_time"] if each["end_time"] else None
+                if len(recordings) > 0:
+                    for i,each in enumerate(recordings):
+                        e_time = each["end_time"] if each["end_time"] else None
 
-                    print("number {} {} {} {}".format(
-                            i+1, 
-                            each["file_details"], 
-                            datetime.datetime.fromtimestamp(
-                                each["start_time"]
-                                ).strftime("%Y-%m-%d %H:%M") , 
-                            e_time
+                        print("number {} {} {} {}".format(
+                                i+1, 
+                                each["file_details"], 
+                                datetime.datetime.fromtimestamp(
+                                    each["start_time"]
+                                    ).strftime("%Y-%m-%d %H:%M") , 
+                                e_time
+                                )
                             )
-                        )
+                else:
+                    print("No current recordings found")
                 print("Letter q Quit")
                 rec_choice_made=input("Choice: ")
                 
                 try:
                     int(rec_choice_made)
-                    if len(rec_choice_made)+1 > int(rec_choice_made) > 0:
+                    if len(recordings)+1 > int(rec_choice_made) > 0:
+                    # if len(rec_choice_made)+1 > int(rec_choice_made) > 0:
                         stop_recording(recordings[int(rec_choice_made)-1]["id"])
-                        break
+                        # break
+                        recordings = get_recordings()
                     else:
                         input("1invalid choice - Enter to continue")
                 except ValueError as e:

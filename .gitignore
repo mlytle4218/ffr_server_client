@@ -1,1 +1,9 @@
 **/logs
+ffr_config.py
+__pycache__
+
+
+logs/ffr_client.log
+logs/ffr_server.log
+#   git config --global user.email "you@example.com"
+#   git config --global user.name "Your Name"

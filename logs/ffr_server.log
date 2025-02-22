@@ -298,3 +298,948 @@ Traceback (most recent call last):
   File "/home/marc/ffr/ffr_server.py", line 187, in main
     if data.get('action') == "start_recording":
 KeyboardInterrupt
+2025-01-06 16:21:48,443 INFO PID_3177229 starting server
+2025-01-06 16:21:55,191 ERROR PID_3177229 control c
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 183, in main
+    data, addr = SOCK.recvfrom(1024)
+                 ^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+2025-01-06 16:22:16,546 INFO PID_3177248 starting server
+2025-02-01 16:25:09,100 INFO PID_1979613 starting server
+2025-02-01 16:44:52,463 INFO PID_2009467 starting server
+2025-02-01 16:46:51,172 INFO PID_2009467 get_recordings
+2025-02-01 16:48:35,213 INFO PID_2015881 starting server
+2025-02-01 16:55:59,825 INFO PID_2015881 start_recording
+2025-02-01 16:55:59,826 INFO PID_2015881 {'action': 'start_recording', 'file_details': '/home/chime/bbc-news-test.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 16:55:59,826 INFO PID_2015881 starting recording for bbc-news-test.mp4
+2025-02-01 16:55:59,826 INFO PID_2015881 tttuuuppplllleeee
+2025-02-01 16:55:59,826 INFO PID_2015881 1738457759.826193
+2025-02-01 16:55:59,826 INFO PID_2015881 <class 'float'>
+2025-02-01 16:55:59,880 DEBUG PID_2030727 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 16:56:00,664 ERROR PID_2030727 record_stream_data
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 62, in record_stream_data
+    response = session.get(url, stream=True)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-02-01 16:56:56,125 INFO PID_2015881 get_recordings
+2025-02-01 16:57:20,384 INFO PID_2015881 get_recordings
+2025-02-01 16:58:28,281 INFO PID_2015881 get_recordings
+2025-02-01 16:59:49,104 INFO PID_2015881 get_recordings
+2025-02-01 17:02:28,322 INFO PID_2015881 get_recordings
+2025-02-01 17:02:30,766 INFO PID_2015881 stop_recording
+2025-02-01 17:14:23,681 INFO PID_2068169 starting server
+2025-02-01 17:15:22,798 INFO PID_2068169 start_recording
+2025-02-01 17:15:22,799 INFO PID_2068169 {'action': 'start_recording', 'file_details': '/home/chime/test-bbc01.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:15:22,799 INFO PID_2068169 starting recording for test-bbc01.mp4
+2025-02-01 17:15:22,799 INFO PID_2068169 tttuuuppplllleeee
+2025-02-01 17:15:22,799 INFO PID_2068169 1738458922.7993054
+2025-02-01 17:15:22,799 INFO PID_2068169 <class 'float'>
+2025-02-01 17:15:22,847 DEBUG PID_2070250 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:15:23,740 ERROR PID_2070250 record_stream_data
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 62, in record_stream_data
+    response = session.get(url, stream=True)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-02-01 17:17:02,869 INFO PID_2073660 starting server
+2025-02-01 17:17:23,935 INFO PID_2073660 get_recordings
+2025-02-01 17:17:52,034 INFO PID_2073660 start_recording
+2025-02-01 17:17:52,034 INFO PID_2073660 {'action': 'start_recording', 'file_details': '/home/chime/test-bbc02.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:17:52,034 INFO PID_2073660 starting recording for test-bbc02.mp4
+2025-02-01 17:17:52,034 INFO PID_2073660 tttuuuppplllleeee
+2025-02-01 17:17:52,034 INFO PID_2073660 1738459072.0345457
+2025-02-01 17:17:52,034 INFO PID_2073660 <class 'float'>
+2025-02-01 17:17:52,077 DEBUG PID_2075409 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:17:52,678 ERROR PID_2075409 record_stream_data
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 62, in record_stream_data
+    response = session.get(url, stream=True)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-02-01 17:21:14,967 INFO PID_2082253 starting server
+2025-02-01 17:21:46,547 INFO PID_2082253 start_recording
+2025-02-01 17:21:46,551 INFO PID_2082253 {'action': 'start_recording', 'file_details': '/home/chime/test-bbc03.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:21:46,551 INFO PID_2082253 starting recording for test-bbc03.mp4
+2025-02-01 17:21:46,551 INFO PID_2082253 tttuuuppplllleeee
+2025-02-01 17:21:46,551 INFO PID_2082253 1738459306.5511994
+2025-02-01 17:21:46,551 INFO PID_2082253 <class 'float'>
+2025-02-01 17:21:46,580 INFO PID_2083363 after try-------------------------------
+2025-02-01 17:21:46,591 DEBUG PID_2083363 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:21:47,283 ERROR PID_2083363 record_stream_data
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 63, in record_stream_data
+    response = session.get(url, stream=True)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-02-01 17:23:05,262 INFO PID_2086016 starting server
+2025-02-01 17:23:17,932 INFO PID_2086016 start_recording
+2025-02-01 17:23:17,933 INFO PID_2086016 {'action': 'start_recording', 'file_details': '.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:23:17,933 INFO PID_2086016 starting recording for .mp4
+2025-02-01 17:23:17,933 INFO PID_2086016 tttuuuppplllleeee
+2025-02-01 17:23:17,933 INFO PID_2086016 1738459397.9331994
+2025-02-01 17:23:17,933 INFO PID_2086016 <class 'float'>
+2025-02-01 17:23:17,964 INFO PID_2086470 after try-------------------------------
+2025-02-01 17:23:17,966 INFO PID_2086470 before response---------------------------
+2025-02-01 17:23:17,978 DEBUG PID_2086470 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:23:18,547 ERROR PID_2086470 record_stream_data
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 64, in record_stream_data
+    response = session.get(url, stream=True)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-02-01 17:23:27,090 INFO PID_2086016 get_recordings
+2025-02-01 17:23:30,242 INFO PID_2086016 stop_recording
+2025-02-01 17:23:45,344 INFO PID_2086016 start_recording
+2025-02-01 17:23:45,344 INFO PID_2086016 {'action': 'start_recording', 'file_details': '/home/chime/bbc-test04.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:23:45,345 INFO PID_2086016 starting recording for bbc-test04.mp4
+2025-02-01 17:23:45,345 INFO PID_2086016 tttuuuppplllleeee
+2025-02-01 17:23:45,345 INFO PID_2086016 1738459425.345106
+2025-02-01 17:23:45,345 INFO PID_2086016 <class 'float'>
+2025-02-01 17:23:45,352 INFO PID_2087524 after try-------------------------------
+2025-02-01 17:23:45,356 INFO PID_2087524 before response---------------------------
+2025-02-01 17:23:45,366 DEBUG PID_2087524 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:23:45,698 ERROR PID_2087524 record_stream_data
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 64, in record_stream_data
+    response = session.get(url, stream=True)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-02-01 17:26:13,544 INFO PID_2092530 starting server
+2025-02-01 17:26:34,305 INFO PID_2092530 start_recording
+2025-02-01 17:26:34,306 INFO PID_2092530 {'action': 'start_recording', 'file_details': '/home/chime/test-bbc05.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:26:34,306 INFO PID_2092530 starting recording for test-bbc05.mp4
+2025-02-01 17:26:34,306 INFO PID_2092530 tttuuuppplllleeee
+2025-02-01 17:26:34,306 INFO PID_2092530 1738459594.3063142
+2025-02-01 17:26:34,306 INFO PID_2092530 <class 'float'>
+2025-02-01 17:26:34,344 INFO PID_2093278 after try-------------------------------
+2025-02-01 17:26:34,346 INFO PID_2093278 before response---------------------------
+2025-02-01 17:26:34,358 DEBUG PID_2093278 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:26:34,849 ERROR PID_2093278 record_stream_data
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 64, in record_stream_data
+    response2 = session.get(url)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-02-01 17:27:40,572 INFO PID_2095555 starting server
+2025-02-01 17:27:58,275 INFO PID_2095555 start_recording
+2025-02-01 17:27:58,275 INFO PID_2095555 {'action': 'start_recording', 'file_details': '/home/chime/test-bbc06.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:27:58,275 INFO PID_2095555 starting recording for test-bbc06.mp4
+2025-02-01 17:27:58,276 INFO PID_2095555 tttuuuppplllleeee
+2025-02-01 17:27:58,276 INFO PID_2095555 1738459678.2759464
+2025-02-01 17:27:58,276 INFO PID_2095555 <class 'float'>
+2025-02-01 17:27:58,312 INFO PID_2096176 after try-------------------------------
+2025-02-01 17:27:58,314 INFO PID_2096176 before response2---------------------------
+2025-02-01 17:27:58,329 DEBUG PID_2096176 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:27:59,152 ERROR PID_2096176 record_stream_data
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+        method=request.method,
+    ...<9 lines>...
+        chunked=chunked,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 474, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/util/util.py", line 38, in reraise
+    raise value.with_traceback(tb)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/lib/python3.13/http/client.py", line 1428, in getresponse
+    response.begin()
+    ~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/http/client.py", line 300, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+                             " response")
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 64, in record_stream_data
+    response2 = session.get(url)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/chime/python3.13venv/lib/python3.13/site-packages/requests/adapters.py", line 682, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-02-01 17:29:59,176 INFO PID_2100278 starting server
+2025-02-01 17:30:24,674 INFO PID_2100278 start_recording
+2025-02-01 17:30:24,674 INFO PID_2100278 {'action': 'start_recording', 'file_details': '/home/chime/test-bbc07.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:30:24,675 INFO PID_2100278 starting recording for test-bbc07.mp4
+2025-02-01 17:30:24,675 INFO PID_2100278 tttuuuppplllleeee
+2025-02-01 17:30:24,675 INFO PID_2100278 1738459824.675078
+2025-02-01 17:30:24,675 INFO PID_2100278 <class 'float'>
+2025-02-01 17:30:24,707 INFO PID_2101203 after try-------------------------------
+2025-02-01 17:30:24,709 INFO PID_2101203 before response2---------------------------
+2025-02-01 17:30:24,720 DEBUG PID_2101203 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:30:25,567 DEBUG PID_2101203 http://hatsubservices.ottc.pro:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134 HTTP/1.1" 302 None
+2025-02-01 17:30:25,569 DEBUG PID_2101203 Starting new HTTP connection (1): 194.126.227.53:80
+2025-02-01 17:30:25,907 DEBUG PID_2101203 http://194.126.227.53:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134?token=ekpXMUt6ZnpNYVZvTVNE HTTP/1.1" 200 None
+2025-02-01 17:31:07,506 INFO PID_2100278 get_recordings
+2025-02-01 17:33:12,508 INFO PID_2106703 starting server
+2025-02-01 17:34:03,672 INFO PID_2106703 start_recording
+2025-02-01 17:34:03,672 INFO PID_2106703 {'action': 'start_recording', 'file_details': '/home/chime/test-bbc08.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:34:03,672 INFO PID_2106703 starting recording for test-bbc08.mp4
+2025-02-01 17:34:03,672 INFO PID_2106703 tttuuuppplllleeee
+2025-02-01 17:34:03,672 INFO PID_2106703 1738460043.6726377
+2025-02-01 17:34:03,672 INFO PID_2106703 <class 'float'>
+2025-02-01 17:34:03,732 INFO PID_2108512 after try-------------------------------
+2025-02-01 17:34:03,736 INFO PID_2108512 before response---------------------------
+2025-02-01 17:34:03,754 DEBUG PID_2108512 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:34:04,650 DEBUG PID_2108512 http://hatsubservices.ottc.pro:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134 HTTP/1.1" 302 None
+2025-02-01 17:34:04,652 DEBUG PID_2108512 Starting new HTTP connection (1): 194.126.227.53:80
+2025-02-01 17:34:04,987 DEBUG PID_2108512 http://194.126.227.53:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134?token=ZGlqc2hqTmRiUzhDTVFu HTTP/1.1" 200 None
+2025-02-01 17:34:04,988 INFO PID_2108512 response---------------------------
+2025-02-01 17:34:04,988 INFO PID_2108512 <Response [200]>
+2025-02-01 17:34:31,643 INFO PID_2106703 get_recordings
+2025-02-01 17:34:34,643 INFO PID_2106703 stop_recording
+2025-02-01 17:35:21,979 INFO PID_2111036 starting server
+2025-02-01 17:36:48,666 INFO PID_2111036 start_recording
+2025-02-01 17:36:48,666 INFO PID_2111036 {'action': 'start_recording', 'file_details': '/home/chime/bbc-news-5pm.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-01 17:36:48,666 INFO PID_2111036 starting recording for bbc-news-5pm.mp4
+2025-02-01 17:36:48,666 INFO PID_2111036 tttuuuppplllleeee
+2025-02-01 17:36:48,666 INFO PID_2111036 1738460208.666528
+2025-02-01 17:36:48,666 INFO PID_2111036 <class 'float'>
+2025-02-01 17:36:48,710 DEBUG PID_2113920 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-01 17:36:49,567 DEBUG PID_2113920 http://hatsubservices.ottc.pro:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134 HTTP/1.1" 302 None
+2025-02-01 17:36:49,570 DEBUG PID_2113920 Starting new HTTP connection (1): 194.126.227.53:80
+2025-02-01 17:36:49,894 DEBUG PID_2113920 http://194.126.227.53:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134?token=QjRyT3FOT29lVHBObU9J HTTP/1.1" 200 None
+2025-02-01 17:36:49,899 INFO PID_2113920 <Response [200]>
+2025-02-01 17:55:23,603 INFO PID_2111036 start_recording
+2025-02-01 17:55:23,603 INFO PID_2111036 {'action': 'start_recording', 'file_details': '/home/chime/scripps-news-test.mp3', 'url': 'https://content.uplynk.com/channel/4bb4901b934c4e029fd4c1abfc766c37.m3u8'}
+2025-02-01 17:55:23,604 INFO PID_2111036 starting recording for scripps-news-test.mp3
+2025-02-01 17:55:23,604 INFO PID_2111036 tttuuuppplllleeee
+2025-02-01 17:55:23,604 INFO PID_2111036 1738461323.604005
+2025-02-01 17:55:23,604 INFO PID_2111036 <class 'float'>
+2025-02-01 18:14:44,054 INFO PID_2111036 get_recordings
+2025-02-01 18:16:10,966 INFO PID_2111036 get_recordings
+2025-02-01 18:16:14,387 INFO PID_2111036 stop_recording
+2025-02-01 18:16:18,941 INFO PID_2111036 get_recordings
+2025-02-01 18:16:28,565 INFO PID_2111036 stop_recording
+2025-02-01 18:16:38,709 INFO PID_2111036 get_recordings
+2025-02-04 11:10:53,322 INFO PID_2111036 start_recording
+2025-02-04 11:10:53,355 INFO PID_2111036 {'action': 'start_recording', 'file_details': '/home/chime/israel/cnn-international-president-trump-israeli-pimre-minister-news-conference-02042025.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/495128', 'start_time': {'year': 2025, 'month': 2, 'day': 4, 'hour': '12', 'minutes': '59', 'meridian': 'PM'}, 'end_time': {'year': 2025, 'month': 2, 'day': 4, 'hour': '4', 'minutes': '00', 'meridian': 'PM'}}
+2025-02-04 11:10:53,357 INFO PID_2111036 starting recording for cnn-international-president-trump-israeli-pimre-minister-news-conference-02042025.mp4
+2025-02-04 11:10:53,362 INFO PID_2111036 tttuuuppplllleeee
+2025-02-04 11:10:53,362 INFO PID_2111036 {'year': 2025, 'month': 2, 'day': 4, 'hour': '12', 'minutes': '59', 'meridian': 'PM'}
+2025-02-04 11:10:53,362 INFO PID_2111036 <class 'dict'>
+2025-02-22 14:29:26,255 INFO PID_2111036 start_recording
+2025-02-22 14:29:26,301 INFO PID_2111036 {'action': 'start_recording', 'file_details': '/home/chime/bbc-test.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 14:29:26,304 INFO PID_2111036 starting recording for bbc-test.mp4
+2025-02-22 14:29:26,306 INFO PID_2111036 tttuuuppplllleeee
+2025-02-22 14:29:26,306 INFO PID_2111036 1740263366.3031638
+2025-02-22 14:29:26,307 INFO PID_2111036 <class 'float'>
+2025-02-22 14:29:26,655 DEBUG PID_1564757 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-22 14:29:28,200 DEBUG PID_1564757 http://hatsubservices.ottc.pro:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134 HTTP/1.1" 302 None
+2025-02-22 14:29:28,214 DEBUG PID_1564757 Starting new HTTP connection (1): 194.126.227.54:80
+2025-02-22 14:29:28,878 DEBUG PID_1564757 http://194.126.227.54:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134?token=UXBFQm01aVV1ZnpmRWpM HTTP/1.1" 200 None
+2025-02-22 14:29:28,880 INFO PID_1564757 <Response [200]>
+2025-02-22 14:29:35,339 INFO PID_2111036 get_recordings
+2025-02-22 14:29:38,471 INFO PID_2111036 get_recordings
+2025-02-22 14:36:42,438 INFO PID_1569890 starting server
+2025-02-22 14:37:19,277 INFO PID_1569890 start_recording
+2025-02-22 14:37:19,277 INFO PID_1569890 {'action': 'start_recording', 'file_details': '/home/chime/bbc-text.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 14:37:19,277 INFO PID_1569890 starting recording for bbc-text.mp4
+2025-02-22 14:37:19,277 INFO PID_1569890 tttuuuppplllleeee
+2025-02-22 14:37:19,277 INFO PID_1569890 1740263839.2776413
+2025-02-22 14:37:19,278 INFO PID_1569890 <class 'float'>
+2025-02-22 14:37:19,320 DEBUG PID_1570424 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-22 14:37:20,695 DEBUG PID_1570424 http://hatsubservices.ottc.pro:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134 HTTP/1.1" 302 None
+2025-02-22 14:37:20,698 DEBUG PID_1570424 Starting new HTTP connection (1): 194.126.227.54:80
+2025-02-22 14:37:21,366 DEBUG PID_1570424 http://194.126.227.54:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134?token=TE5Pc3JKQ2dwOG9oRE1j HTTP/1.1" 200 None
+2025-02-22 14:37:21,366 INFO PID_1570424 <Response [200]>
+2025-02-22 14:38:08,530 INFO PID_1571160 starting server
+2025-02-22 14:38:38,588 INFO PID_1571160 start_recording
+2025-02-22 14:38:38,588 INFO PID_1571160 {'action': 'start_recording', 'file_details': '/home/chime/bbc-teest.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 14:38:38,589 INFO PID_1571160 starting recording for bbc-teest.mp4
+2025-02-22 14:38:38,589 INFO PID_1571160 tttuuuppplllleeee
+2025-02-22 14:38:38,589 INFO PID_1571160 1740263918.5890987
+2025-02-22 14:38:38,589 INFO PID_1571160 <class 'float'>
+2025-02-22 14:38:38,619 DEBUG PID_1571581 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-22 14:38:40,171 DEBUG PID_1571581 http://hatsubservices.ottc.pro:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134 HTTP/1.1" 302 None
+2025-02-22 14:38:40,175 DEBUG PID_1571581 Starting new HTTP connection (1): 194.126.227.54:80
+2025-02-22 14:38:40,851 DEBUG PID_1571581 http://194.126.227.54:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134?token=YUVrNWVUZGZYUm44UUN3 HTTP/1.1" 200 None
+2025-02-22 14:38:40,852 INFO PID_1571581 <Response [200]>
+2025-02-22 14:40:16,459 INFO PID_1571160 get_recordings
+2025-02-22 14:40:18,841 INFO PID_1571160 stop_recording
+2025-02-22 14:40:27,759 ERROR PID_1571160 control c
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 187, in main
+    data, addr = SOCK.recvfrom(1024)
+                 ~~~~~~~~~~~~~^^^^^^
+KeyboardInterrupt
+2025-02-22 14:40:36,638 INFO PID_1573113 starting server
+2025-02-22 14:44:15,048 ERROR PID_1573113 control c
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 187, in main
+    data, addr = SOCK.recvfrom(1024)
+                 ~~~~~~~~~~~~~^^^^^^
+KeyboardInterrupt
+2025-02-22 14:46:27,934 INFO PID_1576887 starting server
+2025-02-22 14:47:23,886 INFO PID_1576887 start_recording
+2025-02-22 14:47:23,886 INFO PID_1576887 {'action': 'start_recording', 'file_details': '/home/chime/bbc-test.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 14:47:23,886 INFO PID_1576887 starting recording for bbc-test.mp4
+2025-02-22 14:47:23,886 INFO PID_1576887 tttuuuppplllleeee
+2025-02-22 14:47:23,886 INFO PID_1576887 1740264443.8865209
+2025-02-22 14:47:23,886 INFO PID_1576887 <class 'float'>
+2025-02-22 14:47:23,901 ERROR PID_1576887 start_recording Error
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 23, in start_recording
+    file_handle = open(file_details, 'wb')
+PermissionError: [Errno 13] Permission denied: '/home/chime/bbc-test.mp4'
+2025-02-22 14:48:58,554 INFO PID_1576887 get_recordings
+2025-02-22 14:49:39,268 INFO PID_1576887 start_recording
+2025-02-22 14:49:39,268 INFO PID_1576887 {'action': 'start_recording', 'file_details': '/home/chime/bbc-test.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 14:49:39,268 INFO PID_1576887 starting recording for bbc-test.mp4
+2025-02-22 14:49:39,268 INFO PID_1576887 tttuuuppplllleeee
+2025-02-22 14:49:39,268 INFO PID_1576887 1740264579.2684543
+2025-02-22 14:49:39,268 INFO PID_1576887 <class 'float'>
+2025-02-22 14:49:39,269 ERROR PID_1576887 start_recording Error
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 23, in start_recording
+    file_handle = open(file_details, 'wb')
+PermissionError: [Errno 13] Permission denied: '/home/chime/bbc-test.mp4'
+2025-02-22 14:49:45,667 INFO PID_1576887 get_recordings
+2025-02-22 14:50:15,308 INFO PID_1576887 start_recording
+2025-02-22 14:50:15,308 INFO PID_1576887 {'action': 'start_recording', 'file_details': '/home/chime/bbc-test.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 14:50:15,308 INFO PID_1576887 starting recording for bbc-test.mp4
+2025-02-22 14:50:15,309 INFO PID_1576887 tttuuuppplllleeee
+2025-02-22 14:50:15,309 INFO PID_1576887 1740264615.308771
+2025-02-22 14:50:15,309 INFO PID_1576887 <class 'float'>
+2025-02-22 14:50:15,313 ERROR PID_1576887 start_recording Error
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 23, in start_recording
+    file_handle = open(file_details, 'wb')
+PermissionError: [Errno 13] Permission denied: '/home/chime/bbc-test.mp4'
+2025-02-22 14:50:21,449 INFO PID_1576887 get_recordings
+2025-02-22 14:52:11,372 INFO PID_1579210 starting server
+2025-02-22 14:52:51,563 INFO PID_1579210 start_recording
+2025-02-22 14:52:51,563 INFO PID_1579210 {'action': 'start_recording', 'file_details': '/home/chime/bbc-test.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 14:52:51,563 INFO PID_1579210 starting recording for bbc-test.mp4
+2025-02-22 14:52:51,563 INFO PID_1579210 tttuuuppplllleeee
+2025-02-22 14:52:51,563 INFO PID_1579210 1740264771.5635102
+2025-02-22 14:52:51,563 INFO PID_1579210 <class 'float'>
+2025-02-22 14:52:51,579 ERROR PID_1579210 start_recording Error
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 23, in start_recording
+    file_handle = open(file_details, 'wb')
+PermissionError: [Errno 13] Permission denied: '/home/chime/bbc-test.mp4'
+2025-02-22 14:53:32,893 INFO PID_1579210 get_recordings
+2025-02-22 15:02:37,218 INFO PID_1579210 start_recording
+2025-02-22 15:02:37,218 INFO PID_1579210 {'action': 'start_recording', 'file_details': '/home/chime/bbc-test2.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 15:02:37,218 INFO PID_1579210 starting recording for bbc-test2.mp4
+2025-02-22 15:02:37,219 INFO PID_1579210 tttuuuppplllleeee
+2025-02-22 15:02:37,219 INFO PID_1579210 1740265357.218955
+2025-02-22 15:02:37,219 INFO PID_1579210 <class 'float'>
+2025-02-22 15:02:37,241 DEBUG PID_1582569 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-22 15:02:39,972 DEBUG PID_1582569 http://hatsubservices.ottc.pro:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134 HTTP/1.1" 302 None
+2025-02-22 15:02:39,976 DEBUG PID_1582569 Starting new HTTP connection (1): 194.126.227.54:80
+2025-02-22 15:02:41,339 DEBUG PID_1582569 http://194.126.227.54:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134?token=VDVzYTFGMHZoZEVQZ1Zt HTTP/1.1" 200 None
+2025-02-22 15:02:41,339 INFO PID_1582569 <Response [200]>
+2025-02-22 15:02:50,782 INFO PID_1579210 get_recordings
+2025-02-22 15:03:33,804 INFO PID_1579210 stop_recording
+2025-02-22 15:31:12,377 ERROR PID_1579210 control c
+Traceback (most recent call last):
+  File "/home/chime/scripts/ffr_server_client/ffr_server.py", line 187, in main
+    data, addr = SOCK.recvfrom(1024)
+                 ~~~~~~~~~~~~~^^^^^^
+KeyboardInterrupt
+2025-02-22 15:31:28,066 INFO PID_1598449 starting server
+2025-02-22 15:32:15,359 INFO PID_1598449 start_recording
+2025-02-22 15:32:15,359 INFO PID_1598449 {'action': 'start_recording', 'file_details': '/home/chime/bbc-test3.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 15:32:15,360 INFO PID_1598449 starting recording for bbc-test3.mp4
+2025-02-22 15:32:15,360 INFO PID_1598449 tttuuuppplllleeee
+2025-02-22 15:32:15,360 INFO PID_1598449 1740267135.3601847
+2025-02-22 15:32:15,360 INFO PID_1598449 <class 'float'>
+2025-02-22 15:32:15,397 DEBUG PID_1599112 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-22 15:32:16,814 DEBUG PID_1599112 http://hatsubservices.ottc.pro:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134 HTTP/1.1" 302 None
+2025-02-22 15:32:16,817 DEBUG PID_1599112 Starting new HTTP connection (1): 194.126.227.54:80
+2025-02-22 15:32:17,508 DEBUG PID_1599112 http://194.126.227.54:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134?token=bmt4anAzTlZYUjFJWXZo HTTP/1.1" 200 None
+2025-02-22 15:32:17,508 INFO PID_1599112 <Response [200]>
+2025-02-22 15:40:13,182 INFO PID_1598449 get_recordings
+2025-02-22 15:40:45,479 INFO PID_1598449 start_recording
+2025-02-22 15:40:45,479 INFO PID_1598449 {'action': 'start_recording', 'file_details': '/home/chime/gods-radio.mp3', 'url': 'http://www.godsdjsradio.com:8080/stream'}
+2025-02-22 15:40:45,479 INFO PID_1598449 starting recording for gods-radio.mp3
+2025-02-22 15:40:45,479 INFO PID_1598449 tttuuuppplllleeee
+2025-02-22 15:40:45,479 INFO PID_1598449 1740267645.4794264
+2025-02-22 15:40:45,479 INFO PID_1598449 <class 'float'>
+2025-02-22 15:40:45,495 DEBUG PID_1605128 Starting new HTTP connection (1): www.godsdjsradio.com:8080
+2025-02-22 15:40:46,147 DEBUG PID_1605128 http://www.godsdjsradio.com:8080 "GET /stream HTTP/1.1" 200 None
+2025-02-22 15:40:46,148 INFO PID_1605128 <Response [200]>
+2025-02-22 15:41:30,779 INFO PID_1598449 start_recording
+2025-02-22 15:41:30,780 INFO PID_1598449 {'action': 'start_recording', 'file_details': '/home/chime/bbc-radio.mp3', 'url': 'https://stream.live.vc.bbcmedia.co.uk/bbc_world_service'}
+2025-02-22 15:41:30,780 INFO PID_1598449 starting recording for bbc-radio.mp3
+2025-02-22 15:41:30,780 INFO PID_1598449 tttuuuppplllleeee
+2025-02-22 15:41:30,780 INFO PID_1598449 1740267690.7801764
+2025-02-22 15:41:30,780 INFO PID_1598449 <class 'float'>
+2025-02-22 15:41:30,797 DEBUG PID_1605712 Starting new HTTPS connection (1): stream.live.vc.bbcmedia.co.uk:443
+2025-02-22 15:41:32,691 DEBUG PID_1605712 https://stream.live.vc.bbcmedia.co.uk:443 "GET /bbc_world_service HTTP/1.1" 200 None
+2025-02-22 15:41:32,691 INFO PID_1605712 <Response [200]>
+2025-02-22 15:41:35,118 INFO PID_1598449 get_recordings
+2025-02-22 15:43:11,740 INFO PID_1598449 get_recordings
+2025-02-22 15:44:57,985 INFO PID_1598449 get_recordings
+2025-02-22 15:44:59,407 INFO PID_1598449 stop_recording
+2025-02-22 15:44:59,427 INFO PID_1598449 get_recordings
+2025-02-22 15:45:06,477 INFO PID_1598449 stop_recording
+2025-02-22 15:45:06,478 INFO PID_1598449 get_recordings
+2025-02-22 15:45:09,700 INFO PID_1598449 stop_recording
+2025-02-22 15:45:10,510 INFO PID_1598449 get_recordings
+2025-02-22 15:47:00,106 INFO PID_1598449 get_recordings
+2025-02-22 15:47:31,859 INFO PID_1598449 start_recording
+2025-02-22 15:47:31,860 INFO PID_1598449 {'action': 'start_recording', 'file_details': '/home/chime/bbc-test4.mp4', 'url': 'http://hatsubservices.ottc.pro/GNRVUQPGFJ/N77HKXQEQE/445134'}
+2025-02-22 15:47:31,860 INFO PID_1598449 starting recording for bbc-test4.mp4
+2025-02-22 15:47:31,860 INFO PID_1598449 tttuuuppplllleeee
+2025-02-22 15:47:31,860 INFO PID_1598449 1740268051.8601792
+2025-02-22 15:47:31,860 INFO PID_1598449 <class 'float'>
+2025-02-22 15:47:31,873 DEBUG PID_1608466 Starting new HTTP connection (1): hatsubservices.ottc.pro:80
+2025-02-22 15:47:33,463 DEBUG PID_1608466 http://hatsubservices.ottc.pro:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134 HTTP/1.1" 302 None
+2025-02-22 15:47:33,465 DEBUG PID_1608466 Starting new HTTP connection (1): 194.126.227.54:80
+2025-02-22 15:47:34,221 DEBUG PID_1608466 http://194.126.227.54:80 "GET /GNRVUQPGFJ/N77HKXQEQE/445134?token=cTdVRFZSQnFYbVFRUnpk HTTP/1.1" 200 None
+2025-02-22 15:47:34,222 INFO PID_1608466 <Response [200]>
+2025-02-22 15:47:38,049 INFO PID_1598449 get_recordings
+2025-02-22 15:47:40,327 INFO PID_1598449 stop_recording
+2025-02-22 15:47:40,890 INFO PID_1598449 get_recordings

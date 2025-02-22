@@ -49,9 +49,9 @@ def start_recording(url, file_details, start_time=None, end_time=None):
         return -1
 
 def record_stream_data(url,fhandler, a, start_time, end_time):
-    if end_time and time.time() > end_time:
+    if end_time != None and time.time() > end_time:
         return None
-    if start_time and end_time:
+    if start_time != None and end_time != None:
         while True:
             if start_time < time.time() < end_time:
                 break 
@@ -59,7 +59,11 @@ def record_stream_data(url,fhandler, a, start_time, end_time):
         chunk_size = 1024
 
         with requests.Session() as session:
-            response = session.get(url, stream=True)
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'
+            }
+            response = session.get(url, headers=headers, stream=True)
+            logger.info(response)
             for chunk in response.iter_content(chunk_size=chunk_size):
                 if end_time:
                     if a.value and time.time() < end_time:
@@ -216,6 +220,9 @@ def main():
                 SOCK.sendto(get_recordings().encode(), addr)
         except KeyboardInterrupt:
             logger.exception("control c")
+            exit()
+        except Exception as e:
+            logger.exception(e)
             exit()
 
 
